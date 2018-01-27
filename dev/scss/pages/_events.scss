@@ -1,0 +1,160 @@
+#events-container {
+
+}
+
+    // ======= EVENT NAVIGATION ========
+
+    #events-navigation {
+        height: 70px;
+        border-bottom: 1px solid $c-t-3;
+        background-color: $c-g-1;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 0px 60px;
+    }
+
+        .events-nav-icons {
+            height:  40px;
+            margin: 0px 10px;
+        }
+
+
+    // ======= EVENT DATA ========
+
+    #events-data {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: "list map";
+        height: calc(100vh - 150px);     // Height of header + navigationbar
+    }
+
+    .events-data-list {
+        grid-template-areas: "list list" !important;
+
+        #events-map {
+            display: none;
+        }
+    }
+
+    .events-data-map {
+        grid-template-areas: "map map" !important;
+
+        #events-list {
+            display: none;
+        }
+    }
+
+        #events-list {
+            grid-area: list;
+        }
+
+        #events-map {
+            grid-area: map;
+        }
+
+
+
+        // ======= EVENT LIST ========
+
+        #events-list {
+            overflow-y: scroll;
+            direction:rtl;
+            overflow-x: hidden;
+        }
+
+        #events-list-ul {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px,1fr));
+            grid-auto-rows: 300px;
+            grid-column-gap: 40px;
+            grid-row-gap: 60px;
+            padding: 30px 50px;;
+            direction:ltr;
+        }
+            .event-item {
+
+            }
+
+            .event-item:hover {
+                .event-item-img::after {
+                    opacity: 1;
+                }
+
+                .event-item-dateday {
+                    color: $c-t-4;
+                }
+            }
+
+            .event-item-link {
+                display: grid;
+                grid-template-rows: 1fr auto;
+                height: 100%;
+                color: inherit;
+            }
+
+                .event-item-img {
+                    background-size: cover;
+                    background-position: center;
+                    position: relative;
+                }
+
+                .event-item-img::after {
+                    display: block;
+                    content: " ";
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    box-shadow: rgba(0, 0, 0, 0.08) 0px 16px 24px 2px, rgba(0, 0, 0, 0.06) 0px 6px 30px 5px, rgba(0, 0, 0, 0.15) 0px 8px 10px -5px;
+                    transition: 0.3s;
+                    opacity: 0;
+                }
+
+
+
+                .event-item-content {
+                    display: grid;
+                    grid-template-columns: 1fr auto;
+                    padding-top: 5px;
+                }
+                    .event-item-text {
+
+                    }
+
+                        .event-item-category {
+                            text-transform: uppercase;
+                            font-weight: 700;
+                            font-size: 12px;
+                        }
+
+                        .event-item-title {
+                            margin: 0px;
+                            font-size: 18px;
+                            margin-bottom: 3px;
+                        }
+
+                        .event-item-price {
+                            color: $c-g-5;
+                        }
+
+                    .event-item-date {
+                    }
+
+                        .event-item-dateday {
+                            color: black;
+                            margin: 0px;
+                            text-align: right;
+                            transition: 0.3s;
+                        }
+
+
+                        .event-item-datemonth {
+                            text-align: right;
+                        }
+
+        // ======= EVENT MAP ========
+
+        #events-map {
+            background-color: rgba($c-t-4, 0.4);
+        }

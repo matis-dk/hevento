@@ -69,25 +69,27 @@ body {
   align-items: center;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); }
 
-.signup-formular > h2 {
-  display: flex;
-  justify-content: center;
-  margin-top: 0px; }
-
-.signup-formular > h5 {
-  display: flex;
-  justify-content: flex-end;
-  margin-right: 10px;
-  color: #f2f2f2; }
-  .signup-formular > h5 > a {
-    margin-left: 10px;
-    border-bottom: 1px solid #f2f2f2;
-    padding-bottom: 3px;
-    transition: 0.3s; }
-  .signup-formular > h5 > a:hover {
-    margin-left: 20px;
-    color: #c7d3e0;
-    border-bottom: 1px solid #c7d3e0; }
+.signup-formular {
+  display: grid;
+  grid-template-columns: 1fr; }
+  .signup-formular > h2 {
+    display: flex;
+    justify-content: center;
+    margin-top: 0px; }
+  .signup-formular > h5 {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 10px;
+    color: #f2f2f2; }
+    .signup-formular > h5 > a {
+      margin-left: 10px;
+      border-bottom: 1px solid #f2f2f2;
+      padding-bottom: 3px;
+      transition: 0.3s; }
+    .signup-formular > h5 > a:hover {
+      margin-left: 20px;
+      color: #c7d3e0;
+      border-bottom: 1px solid #c7d3e0; }
 
 .signup-form {
   display: grid;
@@ -138,6 +140,9 @@ input[type]::selection {
   color: #f2f2f2;
   background-color: #9689CC; }
 
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px #f8f7f8 inset; }
+
 .signup-button {
   background-color: #9689CC;
   background: linear-gradient(-45deg, #9689CC, #E73C7E, #9689CC, #9689CC);
@@ -170,26 +175,284 @@ input[type]::selection {
   display: flex;
   justify-content: center; }
 
-.fixed-section {
-  border: 1px solid red; }
-  .fixed-section > * {
-    padding: 15px;
-    border: 1px solid red; }
+.fixed-section > * {
+  padding: 15px; }
 
 .signup-fixed {
   display: grid;
-  grid-template-columns: auto 1fr 1fr;
-  align-items: center; }
+  grid-template-columns: auto 1.5fr 1fr;
+  margin-top: 50px; }
   .signup-fixed > div > h2 {
     color: #3a3a3a; }
 
-.signup-notifications > p {
-  margin: 10px 0px; }
+.signup-img {
+  width: 150px;
+  margin-right: 50px;
+  margin-top: 20px; }
+
+.signup-description h3 {
+  font-size: 30px;
+  margin: 0px 0px 20px;
+  color: #9689CC; }
+
+.signup-description p {
+  margin-bottom: 15px;
+  color: #555555;
+  line-height: 24px; }
+
+.signup-notifications div {
+  margin: 5px 0px;
+  display: flex;
+  align-items: center; }
+
+.signup-notifications i {
+  width: 35px;
+  font-size: 24px;
+  padding: 5px;
+  margin-right: 10px;
+  color: #555555; }
+
+.signup-notifications a {
+  margin: 10px 0px;
+  font-weight: 700;
+  font-size: 12px;
+  color: #555555;
+  cursor: pointer; }
+
+.signup-notifications .fa-mobile {
+  font-size: 32px; }
+
+.signup-notifications .fa-envelope-o, .signup-notifications .fa-laptop {
+  font-size: 20px; }
+
+.main-eventprofile {
+  display: grid;
+  justify-content: center; }
+
+.eventprofile-container {
+  width: 100vw;
+  max-width: 1170px;
+  padding: 40px 20px;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr; }
+
+.eventprofile-leftsection {
+  padding-right: 30px; }
+
+.eventprofile-rightsection {
+  padding-left: 30px; }
+
+.eventprofile-section {
+  padding: 10px 0px 20px;
+  border-bottom: 1px solid #bdbdbd; }
+
+.eventprofile-title {
+  color: inherit;
+  margin: 0;
+  margin-bottom: 8px; }
+
+.eventprofile-list {
+  margin-top: 20px; }
+  .eventprofile-list li {
+    margin-bottom: 15px; }
+  .eventprofile-list i {
+    width: 30px; }
+
+.eventprofile-hostsection {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas: "hostName hostImage" "hostDescription  hostDescription";
+  grid-row-gap: 15px; }
+
+.eventprofile-host-image {
+  grid-area: hostImage;
+  border: 1px solid red;
+  width: 75px;
+  height: 75px;
+  border-radius: 50%; }
+
+.eventprofile-host-name {
+  grid-area: hostName;
+  color: inherit;
+  font-size: 24px;
+  margin-top: 5px; }
+
+.eventprofile-host-description {
+  grid-area: hostDescription; }
+
+.eventprofile-datesection {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "datetime dateday" "datemonth  dateday";
+  align-items: flex-end; }
+
+.eventprofile-datetime {
+  grid-area: datetime;
+  margin: 0px;
+  text-align: right; }
+
+.eventprofile-dateday {
+  grid-area: dateday;
+  font-size: 60px; }
+
+.eventprofile-datemonth {
+  grid-area: datemonth;
+  margin: 0px;
+  text-transform: uppercase;
+  text-align: right; }
+
+#events-navigation {
+  height: 70px;
+  border-bottom: 1px solid #c7d3e0;
+  background-color: #e4e4e4;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0px 60px; }
+
+.events-nav-icons {
+  height: 40px;
+  margin: 0px 10px; }
+
+#events-data {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "list map";
+  height: calc(100vh - 150px); }
+
+.events-data-list {
+  grid-template-areas: "list list" !important; }
+  .events-data-list #events-map {
+    display: none; }
+
+.events-data-map {
+  grid-template-areas: "map map" !important; }
+  .events-data-map #events-list {
+    display: none; }
+
+#events-list {
+  grid-area: list; }
+
+#events-map {
+  grid-area: map; }
+
+#events-list {
+  overflow-y: scroll;
+  direction: rtl;
+  overflow-x: hidden; }
+
+#events-list-ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-auto-rows: 300px;
+  grid-column-gap: 40px;
+  grid-row-gap: 60px;
+  padding: 30px 50px;
+  direction: ltr; }
+
+.event-item:hover .event-item-img::after {
+  opacity: 1; }
+
+.event-item:hover .event-item-dateday {
+  color: #9689CC; }
+
+.event-item-link {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  height: 100%;
+  color: inherit; }
+
+.event-item-img {
+  background-size: cover;
+  background-position: center;
+  position: relative; }
+
+.event-item-img::after {
+  display: block;
+  content: " ";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 16px 24px 2px, rgba(0, 0, 0, 0.06) 0px 6px 30px 5px, rgba(0, 0, 0, 0.15) 0px 8px 10px -5px;
+  transition: 0.3s;
+  opacity: 0; }
+
+.event-item-content {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  padding-top: 5px; }
+
+.event-item-category {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 12px; }
+
+.event-item-title {
+  margin: 0px;
+  font-size: 18px;
+  margin-bottom: 3px; }
+
+.event-item-price {
+  color: #555555; }
+
+.event-item-dateday {
+  color: black;
+  margin: 0px;
+  text-align: right;
+  transition: 0.3s; }
+
+.event-item-datemonth {
+  text-align: right; }
+
+#events-map {
+  background-color: rgba(150, 137, 204, 0.4); }
+
+.main-signin {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  justify-content: center;
+  align-items: center;
+  background-image: url("https://images.unsplash.com/photo-1508428682639-af23d5cc0f3f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f240daece83caecebc4665036cf0b130&auto=format&fit=crop&w=1567&q=80");
+  background-size: cover;
+  background-position: bottom; }
+
+.signin-container {
+  max-width: 800px;
+  width: 100vw;
+  padding: 40px;
+  padding-top: 30px;
+  background-color: rgba(228, 228, 228, 0.85); }
+
+.signin-h2 {
+  color: #2e3f53;
+  margin: 0px;
+  margin-bottom: 40px; }
+
+.signin-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 30px; }
+  .signin-form > input {
+    margin: 0px;
+    margin-top: 15px; }
+
+.signup-label {
+  font-weight: 700;
+  font-size: 12px; }
+
+.main-index {
+  display: grid;
+  justify-content: center;
+  align-items: center; }
 
 /* ==================== HEADER ==================== */
 header {
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  background-image: linear-gradient(0deg, white, #f7f7f7);
+  border-bottom: 1px solid #e4e4e4; }
 
 header .hevento-logo {
   fill: #2e3f53;
@@ -211,7 +474,6 @@ header .hevento-logo:hover {
   align-items: center; }
 
 #header-navigation {
-  height: 80px;
   display: grid;
   grid-template-rows: 1fr; }
 
@@ -221,12 +483,15 @@ header .hevento-logo:hover {
   align-items: center; }
 
 .hnl-items {
-  padding: 25px 15px;
+  display: inline-block;
+  padding: 25px 15px 25px;
   font-size: 16px;
+  line-height: 25px;
   color: #2e3f53;
   font-weight: 900;
   transition: 0.3s;
-  position: relative; }
+  position: relative;
+  box-sizing: content-box; }
 
 .hnl-items::after {
   width: 100%;
@@ -235,6 +500,7 @@ header .hevento-logo:hover {
   display: block;
   position: absolute;
   bottom: 0px;
+  left: 0px;
   transform: scaleX(0);
   transform-origin: left;
   transition: 0.3s; }
@@ -246,6 +512,9 @@ header .hevento-logo:hover {
   color: #2e3f53;
   transform: scaleX(1); }
 
+.hnl-hideborder::after {
+  display: none; }
+
 .hnl-seprator {
   padding: 25px 20px;
   cursor: default; }
@@ -253,6 +522,55 @@ header .hevento-logo:hover {
 .hnl-seprator::after {
   display: none;
   border: 0; }
+
+.hnl-dropdown-container {
+  display: flex;
+  align-items: center; }
+  .hnl-dropdown-container > figure {
+    display: flex;
+    align-items: flex-end;
+    margin-right: 10px; }
+
+#hnl-dropdown {
+  position: absolute;
+  top: 75px;
+  right: 0px;
+  z-index: 2;
+  background-color: #f2f2f2;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 10px 2px;
+  border: 1px solid #bdbdbd;
+  border-bottom: 2px solid #9689CC;
+  border-top: 0;
+  transition: 0.3s;
+  transform: translateY(25px);
+  opacity: 0; }
+
+.hnl-dropdown-toggleIn {
+  transform: translateY(0px) !important;
+  opacity: 1 !important; }
+
+.hnl-dropdown-active {
+  background-color: #2e3f53 !important;
+  color: #ffffff !important; }
+  .hnl-dropdown-active .hnl-user-icon {
+    fill: #ffffff !important; }
+
+.hnl-user-icon {
+  width: 25px;
+  height: 25px;
+  fill: #2e3f53; }
+
+.hnl-dropdown-item {
+  display: block;
+  padding: 12px 15px;
+  font-size: 13px;
+  font-weight: 100;
+  color: rgba(85, 85, 85, 0.8);
+  width: 240px;
+  border-bottom: 1px solid #e4e4e4; }
+
+.hnl-dropdown-item:hover {
+  background-color: #e5e5e5; }
 
 /* ==================== FOOTER ==================== */
 footer {
@@ -276,7 +594,7 @@ footer .hevento-logo {
   margin-right: 100px; }
 
 .footer-section > h3 {
-  color: #8a8a8a; }
+  color: #555555; }
 
 .footer-item {
   padding-bottom: 12px; }
@@ -317,17 +635,25 @@ footer .hevento-logo {
 
 .footer-bar-text {
   display: inline-block;
-  color: #8a8a8a;
+  color: #555555;
   padding: 20px;
   font-size: 12px; }
   .footer-bar-text > a {
-    color: #8a8a8a; }
+    color: #555555; }
   .footer-bar-text > a:hover {
     color: #f2f2f2; }
 
 .full-section {
-  height: 400px; }
+  height: 350px; }
 
 .fixed-section {
   max-width: 1000px;
   width: 100%; }
+
+#main {
+  height: 800px;
+  display: grid;
+  place-content: center; }
+
+.main-signin, .main-index {
+  height: calc(100vh - 76px - 326px); }

@@ -1,8 +1,18 @@
 .full-section {
-    height: 400px;
+    height: 350px;
 }
 
 .fixed-section {
     max-width: 1000px;
     width: 100%;
+}
+
+#main {
+    height: 800px;
+    display: grid;
+    place-content: center;
+}
+
+%match-height {
+    height: calc(100vh - 76px - 326px); // Header and footer height;
 }

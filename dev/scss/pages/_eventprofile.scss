@@ -1,0 +1,106 @@
+.main-eventprofile {
+    display: grid;
+    justify-content: center;
+}
+
+.eventprofile-container {
+    width: 100vw;
+    max-width: 1170px;
+    padding: 40px 20px;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    > * {
+    }
+}
+
+    .eventprofile-leftsection {
+        padding-right: 30px;
+    }
+
+    .eventprofile-rightsection {
+        padding-left: 30px;
+    }
+
+
+        .eventprofile-section {
+            padding: 10px 0px 20px;
+            border-bottom: 1px solid $c-g-3;
+        }
+
+        .eventprofile-title {
+            color: inherit;
+            margin: 0;
+            margin-bottom: 8px;
+        }
+
+        .eventprofile-category {
+
+        }
+
+        .eventprofile-list {
+            margin-top: 20px;
+
+            li {
+                margin-bottom: 15px;
+            }
+
+            i {
+                width:  30px;
+            }
+        }
+
+        .eventprofile-hostsection {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            grid-template-areas:
+                "hostName hostImage"
+                "hostDescription  hostDescription";
+            grid-row-gap: 15px;
+        }
+
+            .eventprofile-host-image {
+                grid-area: hostImage;
+                border: 1px solid red;
+                width: 75px;
+                height: 75px;
+                border-radius: 50%;
+            }
+
+            .eventprofile-host-name {
+                grid-area: hostName;
+                color: inherit;
+                font-size: 24px;
+                margin-top: 5px;
+            }
+
+            .eventprofile-host-description {
+                grid-area: hostDescription;
+            }
+
+        .eventprofile-datesection {
+            display: grid;
+            grid-template-columns: 1fr ;
+            grid-template-areas:
+                "datetime dateday"
+                "datemonth  dateday";
+            align-items: flex-end;
+
+        }
+
+            .eventprofile-datetime {
+                grid-area: datetime;
+                margin: 0px;
+                text-align: right;
+            }
+
+            .eventprofile-dateday {
+                grid-area: dateday;
+                font-size: 60px;
+            }
+
+            .eventprofile-datemonth {
+                grid-area: datemonth;
+                margin: 0px;
+                text-transform: uppercase;
+                text-align: right;
+            }

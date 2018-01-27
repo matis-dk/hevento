@@ -1,0 +1,41 @@
+.main-signin {
+    @extend %match-height;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    justify-content: center;
+    align-items: center;
+    background-image: url('https://images.unsplash.com/photo-1508428682639-af23d5cc0f3f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f240daece83caecebc4665036cf0b130&auto=format&fit=crop&w=1567&q=80');
+    background-size: cover;
+    background-position: bottom;
+}
+
+    .signin-container {
+        max-width: 800px;
+        width: 100vw;
+        padding: 40px;
+        padding-top: 30px;
+        background-color: rgba($c-g-1, 0.85);
+    }
+
+        .signin-h2 {
+            color: $c-t-1;
+            margin: 0px;
+            margin-bottom: 40px;
+        }
+
+        .signin-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-column-gap: 30px;
+
+            > input {
+                margin: 0px;
+                margin-top: 15px;
+            }
+        }
+
+            .signup-label {
+                font-weight: 700;
+                font-size: 12px;
+            }

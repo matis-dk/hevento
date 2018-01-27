@@ -3,12 +3,13 @@
 <!-- ============================================  -->
 
 
-<div id="main">
-    <h1>HOME - INDEX</h1>
+<div class="main-index">
+    <div class="index-container">
+
+        <h1>INDEX / HOME</h1>
+
+    </div>
 </div>
-
-
-
 
 <!-- ============================================  -->
 <?php include(COMPONENTS_PATH . '/footer.php'); ?>

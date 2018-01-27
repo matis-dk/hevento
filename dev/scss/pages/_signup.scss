@@ -12,6 +12,9 @@
 
     .signup-formular {
 
+        display: grid;
+        grid-template-columns: 1fr;
+
         > h2 {
             display: flex;
             justify-content: center;
@@ -84,6 +87,10 @@
                 background-color: $c-t-4;
             }
 
+            input:-webkit-autofill {
+                -webkit-box-shadow: 0 0 0 30px #f8f7f8 inset;
+            }
+
             .signup-button {
                 background-color: $c-t-4;
                 background: linear-gradient(-45deg,  $c-t-4, #E73C7E,  $c-t-4, $c-t-4);
@@ -128,30 +135,77 @@
 }
 
     .fixed-section {
-        border: 1px solid red;
 
         > * {
             padding: 15px;
-            border: 1px solid red;
         }
     }
 
     .signup-fixed {
         display: grid;
-        grid-template-columns: auto 1fr 1fr;
-        align-items: center;
+        grid-template-columns: auto 1.5fr 1fr;
+        margin-top: 50px;
 
         > div > h2 {
             color: $c-b-5;
         }
     }
 
+    .signup-figure {
+
+    }
+
+        .signup-img {
+            width: 150px;
+            margin-right: 50px;
+            margin-top: 20px;
+        }
+
+
     .signup-description {
+
+        h3 {
+            font-size: 30px;
+            margin: 0px 0px 20px;
+            color: $c-t-4;
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: $c-g-5;
+            line-height: 24px;
+        }
 
     }
 
     .signup-notifications {
-        > p {
+        div {
+            margin: 5px 0px;
+            display: flex;
+            align-items: center;
+        }
+
+        i {
+            width: 35px;
+            font-size: 24px;
+            padding: 5px;
+            margin-right: 10px;
+            color: $c-g-5
+        }
+
+        a {
             margin: 10px 0px;
+            font-weight: 700;
+            font-size: 12px;
+            color: $c-g-5;
+            cursor: pointer;
+        }
+
+        .fa-mobile {
+            font-size: 32px;
+        }
+
+        .fa-envelope-o, .fa-laptop {
+            font-size: 20px;
         }
     }

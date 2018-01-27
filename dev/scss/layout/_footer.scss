@@ -1,0 +1,100 @@
+/* ==================== FOOTER ==================== */
+
+footer {
+    display: grid;
+    background-color: $c-b-3;
+    justify-items: center;
+}
+
+footer .hevento-logo {
+    fill: $c-w-5;
+}
+
+/* FOOTER CONTAINER */
+
+#footer-container {
+    display: grid;
+    grid-template-columns: auto 1fr 1fr 2fr;
+    max-width: 1170px;
+    width: 100%;
+    margin: 50px 0px;
+    padding: 0px 20px;
+}
+
+    #footer-logo {
+        margin-right: 100px;
+    }
+
+    .footer-section {
+        > h3 {
+            color: $c-g-5;
+        }
+
+    }
+
+        .footer-item {
+            padding-bottom: 12px;
+
+            > a {
+                color: $c-w-5;
+            }
+
+            > a:hover {
+                color: $c-t-2;
+            }
+
+        }
+
+    .footer-social {
+        display: grid;
+        justify-content: flex-end;
+    }
+        .footer-social-icon {
+            width: 50px;
+            height: 50px;
+            padding: 12px;
+            border-radius: 4px;
+            margin: 15px;
+            margin-top: 20px;
+            fill: $c-w-5;
+            background-color: $c-b-4;
+            cursor: pointer;
+        }
+
+        .footer-social-icon:hover {
+            fill: $c-t-2;
+        }
+/* FOOTER BOTTOM BAR */
+
+#footer-bottom-bar {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    max-width: 1170px;
+    width: 100%;
+    margin-bottom: 20px;
+    border-top: 1px solid $c-b-5;
+}
+
+    #footer-list {
+        display: flex;
+    }
+
+        .fl-items {
+
+        }
+
+
+        .footer-bar-text {
+            display: inline-block;
+            color: $c-g-5;
+            padding: 20px;
+            font-size: 12px;
+
+            > a {
+                color: $c-g-5;
+            }
+
+            > a:hover {
+                color: $c-w-5;
+            }
+        }

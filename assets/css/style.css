@@ -1,0 +1,184 @@
+/*
+    // ==================== IMPORT ==================== \\
+   ||                                                   ||
+   \\--------------------------------------------------//
+*/
+/* ==================== COLORS ==================== */
+/* ==================== TYPOGRAPHY ==================== */
+h1, h2, h3, h4, h5, h6, div, p, span, li {
+  font-family: 'Lato'; }
+
+h3 {
+  margin: 20px 0px;
+  font-weight: 900;
+  font-size: 14px; }
+
+a {
+  color: white; }
+
+/* ==================== RESET ==================== */
+* {
+  user-select: none;
+  box-sizing: border-box; }
+
+ol, ul {
+  list-style: none; }
+
+li {
+  cursor: pointer; }
+
+input {
+  outline: none; }
+
+a:link, a:visited {
+  text-decoration: none; }
+
+/* ==================== MEDIA ==================== */
+* {
+  padding: 0px;
+  margin: 0px; }
+
+body {
+  background-color: #f2f2f2; }
+
+/* ==================== HEADER ==================== */
+header {
+  display: flex;
+  justify-content: center; }
+
+header .hevento-logo {
+  fill: #2e3f53;
+  transition: 0.3s;
+  cursor: pointer; }
+
+header .hevento-logo:hover {
+  fill: #58789f; }
+
+#header-container {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  max-width: 1170px;
+  width: 100%;
+  padding: 0px 20px; }
+
+#header-logo {
+  display: flex;
+  align-items: center; }
+
+#header-navigation {
+  height: 80px;
+  display: grid;
+  grid-template-rows: 1fr; }
+
+#header-navigation-list {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center; }
+
+.hnl-items {
+  padding: 25px 15px;
+  font-size: 16px;
+  color: #2e3f53;
+  font-weight: 900;
+  transition: 0.3s;
+  position: relative; }
+
+.hnl-items::after {
+  width: 100%;
+  border: 1px solid #9689CC;
+  content: " ";
+  display: block;
+  position: absolute;
+  bottom: 0px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: 0.3s; }
+
+.hnl-items:hover {
+  color: #9689CC; }
+
+.hnl-items:hover::after {
+  color: #2e3f53;
+  transform: scaleX(1); }
+
+.hnl-seprator {
+  padding: 25px 20px;
+  cursor: default; }
+
+.hnl-seprator::after {
+  display: none;
+  border: 0; }
+
+/* ==================== FOOTER ==================== */
+footer {
+  display: grid;
+  background-color: #202020;
+  justify-items: center; }
+
+footer .hevento-logo {
+  fill: #f2f2f2; }
+
+/* FOOTER CONTAINER */
+#footer-container {
+  display: grid;
+  grid-template-columns: auto 1fr 1fr 2fr;
+  max-width: 1170px;
+  width: 100%;
+  margin: 50px 0px;
+  padding: 0px 20px; }
+
+#footer-logo {
+  margin-right: 100px; }
+
+.footer-section > h3 {
+  color: #8a8a8a; }
+
+.footer-item {
+  padding-bottom: 12px; }
+  .footer-item > a {
+    color: #f2f2f2; }
+  .footer-item > a:hover {
+    color: #58789f; }
+
+.footer-social {
+  display: grid;
+  justify-content: flex-end; }
+
+.footer-social-icon {
+  width: 50px;
+  height: 50px;
+  padding: 12px;
+  border-radius: 4px;
+  margin: 15px;
+  margin-top: 20px;
+  fill: #f2f2f2;
+  background-color: #2d2d2d;
+  cursor: pointer; }
+
+.footer-social-icon:hover {
+  fill: #58789f; }
+
+/* FOOTER BOTTOM BAR */
+#footer-bottom-bar {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  max-width: 1170px;
+  width: 100%;
+  margin-bottom: 20px;
+  border-top: 1px solid #3a3a3a; }
+
+#footer-list {
+  display: flex; }
+
+.footer-bar-text {
+  display: inline-block;
+  color: #8a8a8a;
+  padding: 20px;
+  font-size: 12px; }
+  .footer-bar-text > a {
+    color: #8a8a8a; }
+  .footer-bar-text > a:hover {
+    color: #f2f2f2; }
+
+#main {
+  height: 75vh; }

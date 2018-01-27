@@ -1,0 +1,83 @@
+/* ==================== HEADER ==================== */
+
+
+header {
+    display: flex;
+    justify-content: center;
+}
+
+    header .hevento-logo {
+        fill: $c-t-1;
+        transition: 0.3s;
+        cursor: pointer;
+    }
+
+    header .hevento-logo:hover {
+        fill: $c-t-2;
+    }
+
+#header-container {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    max-width: 1170px;
+    width: 100%;
+    padding: 0px 20px;
+}
+
+    #header-logo {
+        display: flex;
+        align-items: center;
+    }
+
+    #header-navigation {
+        height: 80px;
+        display: grid;
+        grid-template-rows: 1fr;
+
+    }
+
+        #header-navigation-list {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+            .hnl-items {
+                padding: 25px 15px;
+                font-size: 16px;
+                color: $c-t-1;
+                font-weight: 900;
+                transition: 0.3s;
+                position: relative;
+            }
+
+            .hnl-items::after {
+                width: 100%;
+                border: 1px solid $c-t-4;
+                content: " ";
+                display: block;
+                position: absolute;
+                bottom: 0px;
+                transform: scaleX(0.0);
+                transform-origin: left;
+                transition: 0.3s;
+            }
+
+            .hnl-items:hover {
+                color: $c-t-4;
+            }
+
+            .hnl-items:hover::after {
+                color: $c-t-1;
+                transform: scaleX(1);
+            }
+
+            .hnl-seprator {
+                padding: 25px 20px;
+                cursor: default;
+            }
+
+            .hnl-seprator::after {
+                display: none;
+                border: 0;
+            }

@@ -13,12 +13,16 @@ h3 {
   font-weight: 900;
   font-size: 14px; }
 
+h2 {
+  margin: 20px 0px;
+  font-size: 28px;
+  color: #f2f2f2; }
+
 a {
   color: white; }
 
 /* ==================== RESET ==================== */
 * {
-  user-select: none;
   box-sizing: border-box; }
 
 ol, ul {
@@ -33,6 +37,19 @@ input {
 a:link, a:visited {
   text-decoration: none; }
 
+* {
+  -webkit-user-select: none;
+  /* Safari 3.1+ */
+  -moz-user-select: none;
+  /* Firefox 2+ */
+  -ms-user-select: none;
+  /* IE 10+ */
+  user-select: none;
+  /* Standard syntax */ }
+
+button:focus, input[type="button"]:focus {
+  outline: none; }
+
 /* ==================== MEDIA ==================== */
 * {
   padding: 0px;
@@ -40,6 +57,134 @@ a:link, a:visited {
 
 body {
   background-color: #f2f2f2; }
+
+.signup-container {
+  background-image: url("https://images.unsplash.com/photo-1497935586351-b67a49e012bf?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=723bf403c08d27742f820e166b5c9f67&auto=format&fit=crop&w=1951&q=80");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 680px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); }
+
+.signup-formular > h2 {
+  display: flex;
+  justify-content: center;
+  margin-top: 0px; }
+
+.signup-formular > h5 {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 10px;
+  color: #f2f2f2; }
+  .signup-formular > h5 > a {
+    margin-left: 10px;
+    border-bottom: 1px solid #f2f2f2;
+    padding-bottom: 3px;
+    transition: 0.3s; }
+  .signup-formular > h5 > a:hover {
+    margin-left: 20px;
+    color: #c7d3e0;
+    border-bottom: 1px solid #c7d3e0; }
+
+.signup-form {
+  display: grid;
+  grid-template-areas: "fullname fullname" "email password" "address zip" "town town" "phone phone" "signup signup";
+  grid-template-columns: 1.5fr 1fr;
+  grid-template-rows: auto; }
+
+#signup-fullname {
+  grid-area: fullname; }
+
+#signup-email {
+  grid-area: email; }
+
+#signup-password {
+  grid-area: password; }
+
+#signup-address {
+  grid-area: address; }
+
+#signup-town {
+  grid-area: town; }
+
+#signup-zip {
+  grid-area: zip; }
+
+#signup-phone {
+  grid-area: phone; }
+
+#signup-button {
+  grid-area: signup; }
+
+.signup-input, .signup-button {
+  padding: 15px;
+  margin: 10px;
+  border-radius: 4px;
+  border: 1px solid #c8c8c8;
+  font-size: 15px; }
+
+.signup-input[type] {
+  color: #9689CC; }
+
+input[type]:-moz-placeholder,
+input[type]:-ms-input-placeholder,
+input[type]::-webkit-input-placeholder {
+  color: #2e3f53; }
+
+input[type]::selection {
+  color: #f2f2f2;
+  background-color: #9689CC; }
+
+.signup-button {
+  background-color: #9689CC;
+  background: linear-gradient(-45deg, #9689CC, #E73C7E, #9689CC, #9689CC);
+  background-size: 400% 400%;
+  animation: Gradient 15s ease infinite;
+  border: 0;
+  color: #dcdcdc;
+  font-weight: 700;
+  font-family: 'Lato';
+  font-size: 18px;
+  cursor: pointer;
+  position: relative;
+  box-shadow: rgba(255, 255, 255, 0.4) 0px 1px 1px 0px inset;
+  transition: 0.3s;
+  margin-top: 25px; }
+
+.signup-button:hover {
+  color: #f2f2f2; }
+
+@keyframes Gradient {
+  0% {
+    background-position: 0% 50%; }
+  50% {
+    background-position: 100% 50%; }
+  100% {
+    background-position: 0% 50%; } }
+
+/* Fixed Section  */
+.signup-section {
+  display: flex;
+  justify-content: center; }
+
+.fixed-section {
+  border: 1px solid red; }
+  .fixed-section > * {
+    padding: 15px;
+    border: 1px solid red; }
+
+.signup-fixed {
+  display: grid;
+  grid-template-columns: auto 1fr 1fr;
+  align-items: center; }
+  .signup-fixed > div > h2 {
+    color: #3a3a3a; }
+
+.signup-notifications > p {
+  margin: 10px 0px; }
 
 /* ==================== HEADER ==================== */
 header {
@@ -180,5 +325,9 @@ footer .hevento-logo {
   .footer-bar-text > a:hover {
     color: #f2f2f2; }
 
-#main {
-  height: 75vh; }
+.full-section {
+  height: 400px; }
+
+.fixed-section {
+  max-width: 1000px;
+  width: 100%; }

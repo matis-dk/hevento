@@ -2,7 +2,6 @@
 <?php include(COMPONENTS_PATH . '/header.php'); ?>
 <!-- ============================================  -->
 
-
 <div class="main-index">
     <div class="index-container">
 

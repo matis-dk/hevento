@@ -8,7 +8,7 @@
     <div class="signup-container">
         <div class="signup-formular">
             <h2 class="signup-h2">Sign Up</h2>
-            <form class="signup-form" action="/hevento/private/db/db_signup.php" method="post">
+            <form class="signup-form" action="/hevento/public/pages/inc/user-signup.php" method="post">
                 <input class="style-input" required spellcheck="false" value="" id="signup-fullname"  type="text" name="user_fullname" placeholder="Fullname">
                 <input class="style-input" required spellcheck="false" value="" id="signup-email"  type="email" name="user_email" placeholder="Email">
                 <input class="style-input" required spellcheck="false" value="" id="signup-password"  type="password" name="user_password" placeholder="Password" minlength="8">

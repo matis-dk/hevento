@@ -2,14 +2,17 @@
 <?php include(COMPONENTS_PATH . '/header.php'); ?>
 <!-- ============================================  -->
 
-
-
 <div id="main-events">
     <div id="events-container">
         <nav id="events-navigation">
-            <img class="events-nav-icons" src="/hevento/public/assets/images/icons/nav-icon-split.svg">
-            <img class="events-nav-icons" src="/hevento/public/assets/images/icons/nav-icon-map.svg">
-            <img class="events-nav-icons" src="/hevento/public/assets/images/icons/nav-icon-list.svg">
+            <div id="events-layout">
+                <figure id="events-layout-toggle" class="icon-nav-icon-layout"></figure>
+                <div id="events-layout-options">
+                    <span class="events-nav-icons icon-nav-icon-list" data-layout="list"></span>
+                    <span class="events-nav-icons icon-nav-icon-map" data-layout="map"></span>
+                    <span class="events-nav-icons icon-nav-icon-split" data-layout="split"></span>
+                </div>
+            </div>
         </nav>
         <div id="events-data" class="events-data-split">
             <div id="events-list">
@@ -242,7 +245,7 @@
                                   "elementType": "geometry.fill",
                                   "stylers": [
                                       {
-                                          "color": "#0eb290"
+                                          "color": "#0e90b2"
                                       }
                                   ]
                               },
@@ -251,7 +254,7 @@
                                   "elementType": "geometry.stroke",
                                   "stylers": [
                                       {
-                                          "color": "#0eb290"
+                                          "color": "#0e90b2"
                                       }
                                   ]
                               },
@@ -260,7 +263,7 @@
                                   "elementType": "geometry.fill",
                                   "stylers": [
                                       {
-                                          "color": "#b1d5d8"
+                                          "color": "#33ccff"
                                       }
                                   ]
                               }
@@ -340,3 +343,33 @@
         </div>
     </div>
 </div>
+
+
+<script type="text/javascript">
+    (function () {
+        var eventsLayout        =   document.getElementById('events-layout');
+        var eventsLayoutDrop    =   document.getElementById('events-layout-options');
+        var eventsData          =   document.getElementById('events-data');
+
+        var layoutSettings = {
+            split: "events-data-split",
+            list: "events-data-list",
+            map: "events-data-map"
+        }
+
+        eventsLayout.addEventListener('click', toggleEventdropdown);
+        eventsLayoutDrop.addEventListener('click', toggleEventlayout);
+
+        function toggleEventdropdown(e) {
+            eventsLayoutDrop.classList.toggle('layout-options-active');
+        }
+
+        function toggleEventlayout (e) {
+            console.log(e.target.getAttribute("data-layout"))
+            var setting = e.target.getAttribute("data-layout");
+            eventsData.className = layoutSettings[setting];
+            initMap();
+        }
+
+    })();
+</script>

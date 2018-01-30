@@ -9,8 +9,8 @@
         <form class="signin-form" action="/hevento/private/db/db_signin.php" method="post">
             <label class="signup-label" for="signin-username">Username / email</label>
             <label class="signup-label" for="signin-password">Password</label>
-            <input class="style-input" id="signin-username" type="text" name="signin-username" placeholder="Your email">
-            <input class="style-input" id="signin-password" type="text" name="signin-password" placeholder="Your password">
+            <input class="style-input" required id="signin-username" type="text" name="signin-username" placeholder="Your email">
+            <input class="style-input" required id="signin-password" type="password" name="signin-password" placeholder="Your password">
             <button class="style-button" type="submit" name="button">Log In</button>
         </form>
 

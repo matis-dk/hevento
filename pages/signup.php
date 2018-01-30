@@ -8,15 +8,15 @@
     <div class="signup-container">
         <div class="signup-formular">
             <h2 class="signup-h2">Sign Up</h2>
-            <form class="signup-form" action="index.html" method="post">
-                <input class="signup-input" spellcheck="false" value="" id="signup-fullname"  type="text" name="user_fullname" placeholder="Fullname">
-                <input class="signup-input" spellcheck="false" value="" id="signup-email"  type="email" name="user_email" placeholder="Email">
-                <input class="signup-input" spellcheck="false" value="" id="signup-password"  type="password" name="user_password" placeholder="Password">
-                <input class="signup-input" spellcheck="false" value="" id="signup-address"  type="text" name="user_address" placeholder="Address">
-                <input class="signup-input" spellcheck="false" value="" id="signup-zip"  type="text" name="user_zip" placeholder="Zip">
-                <input class="signup-input" spellcheck="false" value="" id="signup-town"  type="text" name="user_town" placeholder="Town">
-                <input class="signup-input" spellcheck="false" value="" id="signup-phone"  type="tel" name="user_phone" placeholder="Phone">
-                <button class="signup-button" id="signup-button" type="submit" name="submit" autocomplete="tel">Sign up</button>
+            <form class="signup-form" action="/hevento/private/db/db_signup.php" method="post">
+                <input class="style-input" required spellcheck="false" value="" id="signup-fullname"  type="text" name="user_fullname" placeholder="Fullname">
+                <input class="style-input" required spellcheck="false" value="" id="signup-email"  type="email" name="user_email" placeholder="Email">
+                <input class="style-input" required spellcheck="false" value="" id="signup-password"  type="password" name="user_password" placeholder="Password" minlength="8">
+                <input class="style-input" required spellcheck="false" value="" id="signup-address"  type="text" name="user_address" placeholder="Address">
+                <input class="style-input" required spellcheck="false" value="" id="signup-zip"  type="text" name="user_zip" placeholder="Zip">
+                <input class="style-input" required spellcheck="false" value="" id="signup-town"  type="text" name="user_town" placeholder="Town">
+                <input class="style-input" required spellcheck="false" value="" id="signup-phone"  type="tel" name="user_phone" placeholder="Phone">
+                <button class="style-button" id="signup-button" type="submit" name="submit" autocomplete="tel">Sign up</button>
             </form>
             <h5>Already have an account?<a href="#">Log in now›</a></h5>
         </div>
@@ -40,7 +40,7 @@
         </div>
     </section>
 </div>
-
+<script> console.log("aa")</script>
 
 
 

@@ -428,8 +428,6 @@ body {
   grid-row-gap: 60px;
   padding: 30px 50px;
   direction: ltr;
-  overflow-y: scroll;
-  /* has to be scroll, not auto */
   -webkit-overflow-scrolling: touch; }
 
 .event-item:hover .event-item-img::after {
@@ -484,7 +482,8 @@ body {
   transition: 0.3s; }
 
 .event-item-datemonth {
-  text-align: right; }
+  text-align: right;
+  text-transform: uppercase; }
 
 #events-map {
   background-color: rgba(150, 137, 204, 0.4); }

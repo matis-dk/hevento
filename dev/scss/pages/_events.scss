@@ -126,7 +126,6 @@
             grid-row-gap: 60px;
             padding: 30px 50px;;
             direction:ltr;
-            overflow-y: scroll; /* has to be scroll, not auto */
             -webkit-overflow-scrolling: touch;
         }
             .event-item {
@@ -207,6 +206,7 @@
 
                         .event-item-datemonth {
                             text-align: right;
+                            text-transform: uppercase;
                         }
 
         // ======= EVENT MAP ========

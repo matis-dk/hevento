@@ -40,7 +40,6 @@
         </div>
     </section>
 </div>
-<script> console.log("aa")</script>
 
 
 

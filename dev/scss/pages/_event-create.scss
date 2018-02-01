@@ -1,0 +1,68 @@
+.main {
+
+    > * {
+        border: 1px solid red;
+    }
+}
+
+.event-h2 { // FIX ME?
+    color: black;
+}
+
+.event-createform {
+    border: 1px solid red;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+
+    > * {
+        border: 1px solid red;
+    }
+}
+
+.ec-leftbar, .ec-rightbar {
+    padding: 20px;
+    > * {
+        margin-bottom: 30px;
+        border: 1px solid blue;
+    }
+}
+
+// ======= EVENT LEFTBAR ========
+
+
+.ec-address {
+
+}
+
+    .ec-address-forms {
+        display: grid;
+        grid-template-columns: 1fr 1.5fr;
+        grid-template-rows: 1fr;
+        grid-template-areas:
+            "address address"
+            "zip town";
+        grid-column-gap: 15px;
+    }
+
+        #event-address { grid-area: address; }
+        #event-zip { grid-area: zip; }
+        #event-town { grid-area: town; }
+
+    .ec-address-maps {
+        border: 1px solid green;
+        height: 200px;
+        background-color: rgba($c-t-1, 0.1);
+        margin-top: 20px;
+    }
+
+    .ec-category {
+
+    }
+
+        .ec-category-checkboxes {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+
+// ======= EVENT RIGHTBAR ========

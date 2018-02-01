@@ -1,16 +1,6 @@
-.main-eventprofile {
-    display: grid;
-    justify-content: center;
-}
-
-.eventprofile-container {
-    width: 100vw;
-    max-width: 1170px;
-    padding: 40px 20px;
+.eventprofile {
     display: grid;
     grid-template-columns: 1.5fr 1fr;
-    > * {
-    }
 }
 
     .eventprofile-leftsection {

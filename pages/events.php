@@ -3,8 +3,8 @@
 <!-- ============================================  -->
 
 
-<div id="main-events">
-    <div id="events-container">
+<div>
+    <div>
         <nav id="events-navigation">
             <div id="events-layout">
                 <figure id="events-layout-toggle" class="icon-nav-icon-layout"></figure>

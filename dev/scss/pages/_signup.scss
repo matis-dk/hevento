@@ -3,11 +3,11 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 680px;
     display: grid;
     justify-content: center;
     align-items: center;
     box-shadow: 0 2px 10px rgba(0,0,0,.1);
+    padding: 100px 0px;
 }
 
     .signup-formular {
@@ -85,15 +85,8 @@
         display: grid;
         grid-template-columns: auto 1.5fr 1fr;
         margin-top: 50px;
-
-        > div > h2 {
-            color: $c-b-5;
-        }
     }
 
-    .signup-figure {
-
-    }
 
         .signup-img {
             width: 150px;
@@ -104,7 +97,7 @@
 
     .signup-description {
 
-        h3 {
+        h2 {
             font-size: 30px;
             margin: 0px 0px 20px;
             color: $c-t-4;

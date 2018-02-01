@@ -4,7 +4,7 @@
         <div class="event-item-content">
             <div class="event-item-text">
                 <p class="event-item-category"><?php echo $event_category; ?></p>
-                <h3 class="event-item-title"><?php echo $event_title; ?></h3>
+                <h4 class="event-item-title"><?php echo $event_title; ?></h4>
                 <p class="event-item-price"><?php echo $event_price; ?>kr DKK pr. person</p>
             </div>
             <div class="event-item-date">

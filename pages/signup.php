@@ -4,7 +4,7 @@
 
 
 
-<div class="main-signup">
+<div>
     <div class="signup-container">
         <div class="signup-formular">
             <h2 class="signup-h2">Sign Up</h2>
@@ -27,7 +27,7 @@
                 <img class="signup-img" src="/hevento/public/assets/images/signup-img.svg" alt="Hevento and good mood">
             </figure>
             <div class="signup-description">
-                <h3>Registered now</h3>
+                <h2>Registered now</h2>
                 <p>Proin justo sem, rhoncus ut bibendum vel, vulputate nec metus. Donec sollicitudin fringilla.</p>
                 <p>Duis aute irure dolor in eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             </div>

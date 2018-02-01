@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
     // ==================== IMPORT ==================== \\
    ||                                                   ||
@@ -8,15 +9,15 @@
 h1, h2, h3, h4, h5, h6, div, p, span, li {
   font-family: 'Lato'; }
 
-h3 {
-  margin: 20px 0px;
-  font-weight: 900;
-  font-size: 14px; }
-
 h2 {
   margin: 20px 0px;
   font-size: 28px;
   color: #f2f2f2; }
+
+h3 {
+  margin: 0px;
+  font-weight: 900;
+  font-size: 14px; }
 
 a {
   color: white; }
@@ -84,10 +85,12 @@ button:focus, input[type="button"]:focus {
 
 .style-input, .style-button {
   padding: 15px;
-  margin: 10px;
+  margin: 10px 0px;
+  box-sizing: border-box;
   border-radius: 4px;
   border: 1px solid #c8c8c8;
-  font-size: 15px; }
+  font-size: 15px;
+  width: 100%; }
 
 .style-input[type] {
   color: #9689CC; }
@@ -131,6 +134,52 @@ input:-webkit-autofill {
   100% {
     background-position: 0% 50%; } }
 
+.style-checkbox-label {
+  font-size: 13px !important; }
+
+input.checkbox {
+  display: none; }
+
+input.checkbox + label {
+  display: inline-block;
+  line-height: 1.7;
+  position: relative;
+  padding: calc(1rem - 1rem * 0.54) 0 0.5rem calc(1rem + 1rem);
+  min-height: 1rem; }
+  input.checkbox + label:hover {
+    cursor: pointer; }
+
+input.checkbox + label:before {
+  content: "";
+  height: 1rem;
+  width: 1rem;
+  position: absolute;
+  left: 0.2rem;
+  top: 0.7rem;
+  background-repeat: no-repeat; }
+
+input.checkbox[disabled] + label:before {
+  opacity: 0.5; }
+
+input.checkbox[disabled] + label {
+  color: rgba(0, 0, 0, 0.3); }
+
+input.checkbox:checked + label:before {
+  content: "✓";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border: 2px solid #9689CC;
+  background-color: #9689CC;
+  font-size: 14px;
+  font-weight: 900; }
+
+input.checkbox + label:before {
+  border: 2px solid #adadad;
+  background-color: #f2f2f2;
+  border-radius: 2px; }
+
 /* ==================== MEDIA ==================== */
 * {
   padding: 0px;
@@ -144,11 +193,11 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 680px;
   display: grid;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); }
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 100px 0px; }
 
 .signup-formular {
   display: grid;
@@ -214,15 +263,13 @@ body {
   display: grid;
   grid-template-columns: auto 1.5fr 1fr;
   margin-top: 50px; }
-  .signup-fixed > div > h2 {
-    color: #3a3a3a; }
 
 .signup-img {
   width: 150px;
   margin-right: 50px;
   margin-top: 20px; }
 
-.signup-description h3 {
+.signup-description h2 {
   font-size: 30px;
   margin: 0px 0px 20px;
   color: #9689CC; }
@@ -257,14 +304,53 @@ body {
 .signup-notifications .fa-envelope-o, .signup-notifications .fa-laptop {
   font-size: 20px; }
 
-.main-eventprofile {
-  display: grid;
-  justify-content: center; }
+.main > * {
+  border: 1px solid red; }
 
-.eventprofile-container {
-  width: 100vw;
-  max-width: 1170px;
-  padding: 40px 20px;
+.event-h2 {
+  color: black; }
+
+.event-createform {
+  border: 1px solid red;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr; }
+  .event-createform > * {
+    border: 1px solid red; }
+
+.ec-leftbar, .ec-rightbar {
+  padding: 20px; }
+  .ec-leftbar > *, .ec-rightbar > * {
+    margin-bottom: 30px;
+    border: 1px solid blue; }
+
+.ec-address-forms {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "address address" "zip town";
+  grid-column-gap: 15px; }
+
+#event-address {
+  grid-area: address; }
+
+#event-zip {
+  grid-area: zip; }
+
+#event-town {
+  grid-area: town; }
+
+.ec-address-maps {
+  border: 1px solid green;
+  height: 200px;
+  background-color: rgba(46, 63, 83, 0.1);
+  margin-top: 20px; }
+
+.ec-category-checkboxes {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px; }
+
+.eventprofile {
   display: grid;
   grid-template-columns: 1.5fr 1fr; }
 
@@ -489,10 +575,8 @@ body {
   background-color: rgba(150, 137, 204, 0.4); }
 
 .main-signin {
-  display: grid;
   grid-template-columns: auto;
   grid-template-rows: auto;
-  justify-content: center;
   align-items: center;
   background-image: url("https://images.unsplash.com/photo-1508428682639-af23d5cc0f3f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f240daece83caecebc4665036cf0b130&auto=format&fit=crop&w=1567&q=80");
   background-size: cover;
@@ -723,6 +807,15 @@ footer .hevento-logo {
     color: #555555; }
   .footer-bar-text > a:hover {
     color: #f2f2f2; }
+
+.main-container {
+  display: grid;
+  justify-content: center; }
+
+.main {
+  width: 100vw;
+  max-width: 1170px;
+  padding: 40px 20px; }
 
 .full-section {
   height: 350px; }

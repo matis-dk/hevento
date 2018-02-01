@@ -17,8 +17,8 @@ echo "===============";
 ?>
 
 
-<div class="main-eventprofile">
-    <div class="eventprofile-container">
+<div class="main-container">
+    <div class="main eventprofile">
         <div class="eventprofile-leftsection">
             <div class="eventprofile-section">
                 <h2 class="eventprofile-title">Arrangement for Fysioterapeuter</h2>

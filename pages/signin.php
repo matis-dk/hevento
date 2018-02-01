@@ -3,7 +3,7 @@
 <!-- ============================================  -->
 
 
-<div class="main-signin">
+<div class="main-container main-signin">
     <div class="signin-container">
         <h2 class="signin-h2">Log In</h2>
         <form class="signin-form" action="inc/user-signin.php" method="post">

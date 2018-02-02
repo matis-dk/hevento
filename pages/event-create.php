@@ -44,10 +44,13 @@
                 </div>
                 <div class="ec-date">
                     <h3>Date</h3>
-                    <input class="style-input" required spellcheck="false" value="" id="event-date"  type="text" name="event_date" placeholder="Date">
+                    <input class="style-input" required spellcheck="false" value="" id="event-date"     name="event_date">
+                    <input class="style-input" required spellcheck="false" value="" id="event-duration" name="event_duration">
+                    <input class="style-input" required spellcheck="false" value="" id="event-deadline" name="event_deadline">
+                    <!-- <input class="style-input" required spellcheck="false" value="" id="event-date"  type="text" name="event_date" placeholder="Date">
                     <input class="style-input" required spellcheck="false" value="" id="event-datetime"  type="text" name="event_datetime" placeholder="Datetime">
                     <input class="style-input" required spellcheck="false" value="" id="event-duration"  type="time" name="event_duration" step="60" >
-                    <input class="style-input" required spellcheck="false" value="" id="event-deadline"  type="text" name="event_deadline" placeholder="Deadline">
+                    <input class="style-input" required spellcheck="false" value="" id="event-deadline"  type="text" name="event_deadline" placeholder="Deadline"> -->
                 </div>
                 <div class="ec-category">
                     <h3>Category</h3>
@@ -86,6 +89,29 @@
         </form>
     </div>
 </div>
+
+<link rel="stylesheet" href="../node_modules/flatpickr/dist/flatpickr.css">
+<script src="../node_modules/flatpickr/dist/flatpickr.js"></script>
+
+<script type="text/javascript">
+
+    window.onload = function () {
+        var eventDate       = document.getElementById('event-date');
+        var eventDuration   = document.getElementById('event-duration');
+        var eventDeadline   = document.getElementById('event-deadline');
+
+        console.log("asdas");
+        console.log(flatpickr);
+
+        flatpickr(eventDate, {
+            enableTime: true,
+            dateFormat: "Y-m-d H:i",
+            time_24hr: true
+        });
+
+    }
+
+</script>
 
 
 <!--

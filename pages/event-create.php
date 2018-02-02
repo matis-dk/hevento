@@ -6,7 +6,7 @@
 <div class="main-container">
     <div class="main">
         <h2 class="event-h2">Create Event</h2>
-        <form class="event-createform" action="#" method="post">
+        <form class="event-createform" action="/hevento/public/pages/inc/event-create.inc.php" method="post">
             <div class="ec-leftbar">
                 <div class="ec-title">
                     <h3>Title</h3>
@@ -33,8 +33,8 @@
                     </div>
                 </div>
                 <div class="ec-description">
-                    <h3>Description</h3>
-                    <input class="style-input" required spellcheck="false" value="" id="event-description"  type="text" name="event_description" placeholder="Description">
+                    <div id="ec-editor"></div>
+                    <textarea required name="event_description" id="myEditor"></textarea>
                 </div>
             </div>
             <div class="ec-rightbar">
@@ -57,24 +57,24 @@
                     <h3>Category</h3>
                     <ul class="ec-category-checkboxes">
                         <li>
-                            <input id="ec-category-box1" class="checkbox" type="checkbox">
+                            <input id="ec-category-box1" class="checkbox" type="checkbox" name="event_category_checkboxes[]" value="1">
                             <label for="ec-category-box1" class="style-checkbox-label">Food & drink</label>
                         </li>
                         <li>
-                            <input id="ec-category-box2" class="checkbox" type="checkbox">
+                            <input id="ec-category-box2" class="checkbox" type="checkbox" name="event_category_checkboxes[]" value="asdas">
                             <label for="ec-category-box2" class="style-checkbox-label">Ticket sale at the place</label>
                         </li>
                         <li>
-                            <input id="ec-category-box3" class="checkbox" type="checkbox">
+                            <input id="ec-category-box3" class="checkbox" type="checkbox" name="event_category_checkboxes[]"value="asdas">
                             <label for="ec-category-box3" class="style-checkbox-label">Physiotherapist only</label>
                         </li>
                         <li>
-                            <input id="ec-category-box4" class="checkbox" type="checkbox">
+                            <input id="ec-category-box4" class="checkbox" type="checkbox" name="event_category_checkboxes[]"value="4">
                             <label for="ec-category-box4" class="style-checkbox-label">Hands on training</label>
                         </li>
                     </ul>
                     <div class="ec-category-type">
-                        <select required name="event_capacity" class="style-input">
+                        <select required name="event_category_type" class="style-input">
                           <option value="arrangement">Arrangement</option>
                           <option value="kursus">Kursus</option>
                           <option value="meetup">Meetup</option>
@@ -95,12 +95,22 @@
     </div>
 </div>
 
+<link href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.5.1/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.5.1/css/froala_style.min.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="../node_modules/flatpickr/dist/flatpickr.css">
+
 <script src="../node_modules/flatpickr/dist/flatpickr.js"></script>
+<script src="../node_modules/jquery/dist/jquery.js"></script>
+<script src="../node_modules/froala-editor/js/froala_editor.pkgd.min.js"></script>
+
+
+
 
 <script type="text/javascript">
 
     window.onload = function () {
+
+        // Date =====================================================
         var eventDate       = document.getElementById('event-date');
         var eventDuration   = document.getElementById('event-duration');
 
@@ -118,7 +128,21 @@
             defaultDate: "01:00"
 
         });
+
+        // Froala Editor ===========================================
+        var ecEditor = document.getElementById('myEditor');
+
+          $(ecEditor).froalaEditor({
+              toolbarButtons: ['fullscreen', 'bold', 'italic', 'underline', 'formatUL', 'insertLink'],
+              quickInsertButtons: [''],
+              quickInsertTags: [''],
+              height: 300
+          });
+
     }
+
+
+
 
 </script>
 

@@ -20,6 +20,7 @@
     "jshint": "^2.9.5"
   },
   "dependencies": {
-    "flatpickr": "^4.2.4"
+    "flatpickr": "^4.2.4",
+    "froala-editor": "^2.7.4"
   }
 }

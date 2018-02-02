@@ -6,7 +6,7 @@
 <div class="main-container">
     <div class="main">
         <h2 class="event-h2">Create Event</h2>
-        <form class="event-createform" action="/hevento/public/pages/inc/event-create.inc.php" method="post">
+        <form class="event-createform" action="/hevento/public/pages/inc/event-create.inc.php" method="post" enctype="multipart/form-data">
             <div class="ec-leftbar">
                 <div class="ec-title">
                     <h3>Title</h3>
@@ -40,7 +40,7 @@
             <div class="ec-rightbar">
                 <div class="ec-cover">
                     <h3>Cover</h3>
-                    <input class="style-input" required spellcheck="false" value="" id="event-cover"  type="text" name="event_cover" placeholder="Cover">
+                    <input class="style-input" required value="" id="event-cover"  type="file" name="event_cover" placeholder="Cover">
                 </div>
                 <div class="ec-date">
                     <h3>Date</h3>
@@ -61,11 +61,11 @@
                             <label for="ec-category-box1" class="style-checkbox-label">Food & drink</label>
                         </li>
                         <li>
-                            <input id="ec-category-box2" class="checkbox" type="checkbox" name="event_category_checkboxes[]" value="asdas">
+                            <input id="ec-category-box2" class="checkbox" type="checkbox" name="event_category_checkboxes[]" value="2">
                             <label for="ec-category-box2" class="style-checkbox-label">Ticket sale at the place</label>
                         </li>
                         <li>
-                            <input id="ec-category-box3" class="checkbox" type="checkbox" name="event_category_checkboxes[]"value="asdas">
+                            <input id="ec-category-box3" class="checkbox" type="checkbox" name="event_category_checkboxes[]"value="3">
                             <label for="ec-category-box3" class="style-checkbox-label">Physiotherapist only</label>
                         </li>
                         <li>

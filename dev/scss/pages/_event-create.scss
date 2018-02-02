@@ -12,7 +12,7 @@
 .event-createform {
     border: 1px solid red;
     display: grid;
-    grid-template-columns: 1.5fr 1fr;
+    grid-template-columns: 1.5fr auto;
 
     > * {
         border: 1px solid red;
@@ -62,7 +62,13 @@
         .ec-category-checkboxes {
             display: flex;
             justify-content: space-between;
+            flex-wrap: wrap;
             margin-top: 10px;
         }
 
 // ======= EVENT RIGHTBAR ========
+
+.ec-rightbar {
+    max-width: 308px;
+    box-sizing: content-box;
+}

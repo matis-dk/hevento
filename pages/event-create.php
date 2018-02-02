@@ -44,20 +44,21 @@
                 </div>
                 <div class="ec-date">
                     <h3>Date</h3>
-                    <input class="style-input" required spellcheck="false" value="" id="event-date"     name="event_date">
-                    <input class="style-input" required spellcheck="false" value="" id="event-duration" name="event_duration">
-                    <input class="style-input" required spellcheck="false" value="" id="event-deadline" name="event_deadline">
-                    <!-- <input class="style-input" required spellcheck="false" value="" id="event-date"  type="text" name="event_date" placeholder="Date">
-                    <input class="style-input" required spellcheck="false" value="" id="event-datetime"  type="text" name="event_datetime" placeholder="Datetime">
-                    <input class="style-input" required spellcheck="false" value="" id="event-duration"  type="time" name="event_duration" step="60" >
-                    <input class="style-input" required spellcheck="false" value="" id="event-deadline"  type="text" name="event_deadline" placeholder="Deadline"> -->
+                    <input class="style-input" required spellcheck="false" value="" id="event-date"     name="event_date"       placeholder="Date and time">
+                    <input class="style-input" required spellcheck="false" value="" id="event-duration" name="event_duration"   placeholder="Duration">
+                    <select required id="event-deadline" name="event_deadline" class="style-input">
+                      <option value="1">1 Dag</option>
+                      <option value="2">2 Dag</option>
+                      <option value="3">3 Dag</option>
+                      <option value="4">4 Dag</option>
+                    </select>
                 </div>
                 <div class="ec-category">
                     <h3>Category</h3>
                     <ul class="ec-category-checkboxes">
                         <li>
                             <input id="ec-category-box1" class="checkbox" type="checkbox">
-                            <label for="ec-category-box1" class="style-checkbox-label">Food</label>
+                            <label for="ec-category-box1" class="style-checkbox-label">Food & drink</label>
                         </li>
                         <li>
                             <input id="ec-category-box2" class="checkbox" type="checkbox">
@@ -66,6 +67,10 @@
                         <li>
                             <input id="ec-category-box3" class="checkbox" type="checkbox">
                             <label for="ec-category-box3" class="style-checkbox-label">Physiotherapist only</label>
+                        </li>
+                        <li>
+                            <input id="ec-category-box4" class="checkbox" type="checkbox">
+                            <label for="ec-category-box4" class="style-checkbox-label">Hands on training</label>
                         </li>
                     </ul>
                     <div class="ec-category-type">
@@ -98,10 +103,6 @@
     window.onload = function () {
         var eventDate       = document.getElementById('event-date');
         var eventDuration   = document.getElementById('event-duration');
-        var eventDeadline   = document.getElementById('event-deadline');
-
-        console.log("asdas");
-        console.log(flatpickr);
 
         flatpickr(eventDate, {
             enableTime: true,
@@ -109,6 +110,14 @@
             time_24hr: true
         });
 
+        flatpickr(eventDuration, {
+            enableTime: true,
+            noCalendar: true,
+            dateFormat: "H:i",
+            time_24hr: true,
+            defaultDate: "01:00"
+
+        });
     }
 
 </script>

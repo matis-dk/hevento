@@ -30,7 +30,6 @@
 
     .style-button {
         background-color: $c-t-4;
-        background: linear-gradient(-45deg,  $c-t-4, #E73C7E,  $c-t-4, $c-t-4);
         background-size: 400% 400%;
         animation: Gradient 15s ease infinite;
         border: 0;
@@ -40,7 +39,6 @@
         font-size: 18px;
         cursor: pointer;
         position: relative;
-        box-shadow: rgba(255, 255, 255, 0.4) 0px 1px 1px 0px inset;
         transition: 0.3s;
         margin-top: 25px;
     }
@@ -49,25 +47,14 @@
         color: $c-w-5;
     }
 
-    @keyframes Gradient {
-    	0% {
-    		background-position: 0% 50%
-    	}
-    	50% {
-    		background-position: 100% 50%
-    	}
-    	100% {
-    		background-position: 0% 50%
-    	}
-    }
 
 
 // ======= CHECKBOX FORMS ========
 
-$inputSize: 1rem;
+$inputSize: 0.8rem;
 
     .style-checkbox-label {
-        font-size: 13px !important;
+        font-size: 12px !important;
     }
 
     input.checkbox{ display: none }
@@ -87,7 +74,7 @@ $inputSize: 1rem;
       width: $inputSize;
       position: absolute;
       left: 0.2rem;
-      top: 0.7rem;
+      top: 0.55rem;
       background-repeat: no-repeat;
     }
 
@@ -104,12 +91,37 @@ $inputSize: 1rem;
         color: white;
         border: 2px solid $c-t-4;
         background-color: $c-t-4;
-        font-size: 14px;
-        font-weight: 900;
+        font-size: 12px;
+        font-weight: 100;
     }
 
     input.checkbox + label:before {
-        border: 2px solid $c-g-4;
+        border: 2px solid $c-g-3;
         background-color: rgb(242, 242, 242);
         border-radius: 2px;
     }
+
+
+// ======= SELECT DROPDOWN ========
+
+
+select {
+    background: url("https://image.ibb.co/iMeAJv/selectbox_arrow.png") right center no-repeat;
+    appearance: none; /* this is must */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: white;
+}
+
+body select option {
+    padding: 0 4px;
+}
+/* for IE and Edge */
+
+select::-ms-expand {
+    display: none;
+}
+
+select:disabled::-ms-expand {
+    background: #f60;
+}

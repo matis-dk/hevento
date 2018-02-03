@@ -678,7 +678,7 @@ header .hevento-logo:hover {
 
 .hnl-items::after {
   width: 100%;
-  border: 1px solid #9689CC;
+  border-bottom: 2px solid #9689CC;
   content: " ";
   display: block;
   position: absolute;

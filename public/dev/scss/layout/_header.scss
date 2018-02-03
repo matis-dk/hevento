@@ -57,7 +57,7 @@ header {
 
             .hnl-items::after {
                 width: 100%;
-                border: 1px solid $c-t-4;
+                border-bottom: 2px solid $c-t-4;
                 content: " ";
                 display: block;
                 position: absolute;

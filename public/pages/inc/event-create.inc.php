@@ -1,5 +1,39 @@
 <?php
 
+// echo "<pre>";
+// print_r(get_loaded_extensions());
+// echo "</pre>";
+//
+// $finfo = finfo_open();
+// echo "<p>WHHAHAHA</p>";
+
+phpinfo();
+
+exit();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 require_once('../../../private/initialize.php');
 
 
@@ -76,14 +110,20 @@ try {
     //$mimeType = $finfo->file($_FILES['event_cover']['tmp_name']);
     echo "==============";
 
+    // if (isset($_FILES['event_cover']['tmp_name'])) {
+    //     $finfo = finfo_open(FILEINFO_MIME_TYPE);
+    //     $mime = finfo_file($finfo, $_FILES['event_cover']['tmp_name']);
+    // }
+
     if (isset($_FILES['event_cover']['tmp_name'])) {
-        $finfo = finfo_open(FILEINFO_MIME_TYPE);
-        $mime = finfo_file($finfo, $_FILES['soup']['tmp_name']);
+        $finfo = finfo_open();
 
-        print_r($mime);
+        // $mime = finfo_file($finfo, $_FILES['soup']['tmp_name']);
 
-        finfo_close($finfo);
+        echo "<p>asdadas</p>";
     }
+
+
 
     echo "==============";
 

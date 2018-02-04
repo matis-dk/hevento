@@ -1,8 +1,5 @@
 .main {
 
-    > * {
-        border: 1px solid red;
-    }
 }
 
 .event-h2 { // FIX ME?
@@ -10,50 +7,64 @@
 }
 
 .event-createform {
-    border: 1px solid red;
     display: grid;
     grid-template-columns: 1.5fr auto;
-
-    > * {
-        border: 1px solid red;
-    }
+    grid-column-gap: 20px;
 }
 
 .ec-leftbar, .ec-rightbar {
     padding: 20px;
     > * {
         margin-bottom: 30px;
-        border: 1px solid blue;
     }
 }
 
 // ======= EVENT LEFTBAR ========
 
 
-.ec-address {
+    .ec-address {
 
+    }
+
+        .ec-address-forms {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            grid-template-rows: 1fr;
+            grid-template-areas:
+                "address address"
+                "zip town";
+            grid-column-gap: 15px;
+
+            > * {
+                width: 100%;
+            }
+        }
+
+            #event-address { grid-area: address; }
+            #event-zip { grid-area: zip; }
+            #event-town { grid-area: town; }
+
+        .ec-address-maps {
+            height: 200px;
+            background-color: rgba($c-t-1, 0.07);
+            margin-top: 20px;
+        }
+
+    .ec-description {
+        height: 400px;
+    }
+
+        // Styling froala editor bar
+        .fr-toolbar {
+            border-top-color: $c-t-2 !important;
+        }
+
+// ======= EVENT RIGHTBAR ========
+
+.ec-rightbar {
+    max-width: 308px;
+    box-sizing: content-box;
 }
-
-    .ec-address-forms {
-        display: grid;
-        grid-template-columns: 1fr 1.5fr;
-        grid-template-rows: 1fr;
-        grid-template-areas:
-            "address address"
-            "zip town";
-        grid-column-gap: 15px;
-    }
-
-        #event-address { grid-area: address; }
-        #event-zip { grid-area: zip; }
-        #event-town { grid-area: town; }
-
-    .ec-address-maps {
-        border: 1px solid green;
-        height: 200px;
-        background-color: rgba($c-t-1, 0.1);
-        margin-top: 20px;
-    }
 
     .ec-category {
 
@@ -65,18 +76,3 @@
             flex-wrap: wrap;
             margin-top: 10px;
         }
-
-    .ec-description {
-        height: 400px;
-    }
-
-        #editSection {
-            height: 300px;
-        }
-
-// ======= EVENT RIGHTBAR ========
-
-.ec-rightbar {
-    max-width: 308px;
-    box-sizing: content-box;
-}

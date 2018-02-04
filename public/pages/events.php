@@ -21,11 +21,11 @@
                     <?php
 
                     foreach (getEventsAll() as $i) {
-                        $event_category = $i["event_category"];
-                        $event_title    = $i["event_title"];
-                        $event_price    = $i["event_price"];
-                        $event_date     = $i["event_date"];
-                        $event_id       = $i["event_id"];
+                        $event_category_type    = $i["event_category_type"];
+                        $event_title            = $i["event_title"];
+                        $event_price            = $i["event_price"];
+                        $event_date             = $i["event_date"];
+                        $event_id               = $i["event_id"];
 
                         include(PUBLIC_PATH . '/pages/event-item.php');
                     }

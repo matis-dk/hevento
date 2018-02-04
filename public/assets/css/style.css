@@ -170,13 +170,38 @@ input.checkbox + label:before {
   background-color: #f2f2f2;
   border-radius: 2px; }
 
+.ec-cover {
+  display: grid;
+  grid-template-columns: auto; }
+  .ec-cover > div {
+    margin-top: 15px;
+    display: flex;
+    align-items: center; }
+
+.style-upload-label {
+  padding: 10px;
+  margin-right: 25px;
+  background-color: #0da7c1;
+  border-radius: 3px;
+  color: #f2f2f2;
+  font-family: 'Lato';
+  font-size: 14px;
+  cursor: pointer;
+  width: 150px;
+  display: grid;
+  justify-content: center; }
+
+.style-upload-input {
+  display: none; }
+
 select {
   background: url("https://image.ibb.co/iMeAJv/selectbox_arrow.png") right center no-repeat;
   appearance: none;
   /* this is must */
   -webkit-appearance: none;
   -moz-appearance: none;
-  background-color: white; }
+  background-color: white;
+  color: #555555; }
 
 body select option {
   padding: 0 4px; }
@@ -312,24 +337,18 @@ body {
 .signup-notifications .fa-envelope-o, .signup-notifications .fa-laptop {
   font-size: 20px; }
 
-.main > * {
-  border: 1px solid red; }
-
 .event-h2 {
   color: black; }
 
 .event-createform {
-  border: 1px solid red;
   display: grid;
-  grid-template-columns: 1.5fr auto; }
-  .event-createform > * {
-    border: 1px solid red; }
+  grid-template-columns: 1.5fr auto;
+  grid-column-gap: 20px; }
 
 .ec-leftbar, .ec-rightbar {
   padding: 20px; }
   .ec-leftbar > *, .ec-rightbar > * {
-    margin-bottom: 30px;
-    border: 1px solid blue; }
+    margin-bottom: 30px; }
 
 .ec-address-forms {
   display: grid;
@@ -337,6 +356,8 @@ body {
   grid-template-rows: 1fr;
   grid-template-areas: "address address" "zip town";
   grid-column-gap: 15px; }
+  .ec-address-forms > * {
+    width: 100%; }
 
 #event-address {
   grid-area: address; }
@@ -348,26 +369,25 @@ body {
   grid-area: town; }
 
 .ec-address-maps {
-  border: 1px solid green;
   height: 200px;
-  background-color: rgba(46, 63, 83, 0.1);
+  background-color: rgba(46, 63, 83, 0.07);
   margin-top: 20px; }
+
+.ec-description {
+  height: 400px; }
+
+.fr-toolbar {
+  border-top-color: #58789f !important; }
+
+.ec-rightbar {
+  max-width: 308px;
+  box-sizing: content-box; }
 
 .ec-category-checkboxes {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   margin-top: 10px; }
-
-.ec-description {
-  height: 400px; }
-
-#editSection {
-  height: 300px; }
-
-.ec-rightbar {
-  max-width: 308px;
-  box-sizing: content-box; }
 
 .eventprofile {
   display: grid;

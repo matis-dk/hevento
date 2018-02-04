@@ -29,7 +29,7 @@
                         </select>
                     </div>
                     <div class="ec-address-maps">
-                        MAPS
+                        <div id="events-map-tiny"></div>
                     </div>
                 </div>
                 <div class="ec-description">
@@ -40,7 +40,11 @@
             <div class="ec-rightbar">
                 <div class="ec-cover">
                     <h3>Cover</h3>
-                    <input class="style-input" required value="" id="event-cover"  type="file" name="event_cover" placeholder="Cover">
+                    <div>
+                        <label for="event-cover" class="style-upload-label">Upload cover</label>
+                        <input class="style-upload-input" required value="" id="event-cover"  type="file" name="event_cover">
+                        <span id="event-cover-name"></span>
+                    </div>
                 </div>
                 <div class="ec-date">
                     <h3>Date</h3>
@@ -125,7 +129,7 @@
             noCalendar: true,
             dateFormat: "H:i",
             time_24hr: true,
-            defaultDate: "01:00"
+            defaultDate: "00:00"
 
         });
 
@@ -133,11 +137,17 @@
         var ecEditor = document.getElementById('myEditor');
 
           $(ecEditor).froalaEditor({
-              toolbarButtons: ['fullscreen', 'bold', 'italic', 'underline', 'formatUL', 'insertLink'],
+              toolbarButtons: ['fullscreen', 'bold', 'italic', 'underline', 'insertLink'],
               quickInsertButtons: [''],
               quickInsertTags: [''],
               height: 300
           });
+
+        // Upload cover name ===========================================
+        var eventCover = document.getElementById('event-cover');
+        var eventSpan  = document.getElementById('event-cover-name');
+
+        eventCover.addEventListener('change', function () { eventSpan.innerText = this.files[0].name }, false);
 
     }
 

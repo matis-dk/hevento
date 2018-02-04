@@ -14,6 +14,7 @@
 
         display: grid;
         grid-template-columns: 1fr;
+        padding: 0px 15px;
 
         > h2 {
             display: flex;
@@ -21,25 +22,6 @@
             margin-top: 0px;
         }
 
-        > h5 {
-            display: flex;
-            justify-content: flex-end;
-            margin-right: 10px;
-            color: $c-w-5;
-
-            > a {
-                margin-left: 10px;
-                border-bottom: 1px solid $c-w-5;
-                padding-bottom: 3px;
-                transition: 0.3s;
-            }
-
-            > a:hover {
-                margin-left: 20px;
-                color: $c-t-3;
-                border-bottom: 1px solid $c-t-3;
-            }
-        }
     }
 
         .signup-form {
@@ -53,6 +35,7 @@
                 "signup signup";
             grid-template-columns: 1.5fr 1fr;
             grid-template-rows: auto;
+            grid-column-gap: 20px;
         }
 
         #signup-fullname {grid-area: fullname}

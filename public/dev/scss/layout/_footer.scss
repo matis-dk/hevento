@@ -28,6 +28,7 @@ footer .hevento-logo {
     .footer-section {
         > h3 {
             color: $c-g-5;
+            padding-bottom: 12px;
         }
 
     }
@@ -36,11 +37,12 @@ footer .hevento-logo {
             padding-bottom: 12px;
 
             > a {
-                color: $c-w-5;
+                color: $c-g-4;
+                font-size: 14px;
             }
 
             > a:hover {
-                color: $c-t-2;
+                color: $c-t-4;
             }
 
         }
@@ -86,12 +88,11 @@ footer .hevento-logo {
 
         .footer-bar-text {
             display: inline-block;
-            color: $c-g-5;
             padding: 20px;
             font-size: 12px;
 
             > a {
-                color: $c-g-5;
+                color: $c-g-4;
             }
 
             > a:hover {

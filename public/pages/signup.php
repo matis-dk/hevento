@@ -18,7 +18,7 @@
                 <input class="style-input" required spellcheck="false" value="" id="signup-phone"  type="tel" name="user_phone" placeholder="Phone">
                 <button class="style-button" id="signup-button" type="submit" name="submit" autocomplete="tel">Sign up</button>
             </form>
-            <h5>Already have an account?<a href="#">Log in now›</a></h5>
+            <h5 class="style-link-note">Already have an account?<a href="#">Log in now›</a></h5>
         </div>
     </div>
     <section class="full-section signup-section">

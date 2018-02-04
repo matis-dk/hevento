@@ -9,31 +9,21 @@
 }
 
     .signin-container {
-        max-width: 800px;
+        display: grid;
+        justify-content: center;
+        grid-template-columns: 1fr;
+        max-width: 600px;
         width: 100vw;
-        padding: 40px;
-        padding-top: 30px;
-        background-color: rgba($c-g-1, 0.85);
+        padding: 25px;
+        padding-top: 40px;
     }
 
+
         .signin-h2 {
-            color: $c-t-1;
+            color: $c-w-5;
             margin: 0px;
             margin-bottom: 40px;
         }
 
         .signin-form {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-column-gap: 30px;
-
-            > input {
-                margin: 0px;
-                margin-top: 15px;
-            }
         }
-
-            .signup-label {
-                font-weight: 700;
-                font-size: 12px;
-            }

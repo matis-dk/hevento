@@ -33,8 +33,7 @@
                     </div>
                 </div>
                 <div class="ec-description">
-                    <div id="ec-editor"></div>
-                    <textarea required name="event_description" id="myEditor"></textarea>
+                    <textarea required name="event_description" id="ec-editor"></textarea>
                 </div>
             </div>
             <div class="ec-rightbar">
@@ -99,8 +98,8 @@
     </div>
 </div>
 
-<link href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.5.1/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
-<link href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.5.1/css/froala_style.min.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="../node_modules/froala-editor/css/froala_editor.pkgd.min.css" type="text/css" />
+<link rel="stylesheet" href="../node_modules/froala-editor/css/froala_style.min.css" type="text/css" />
 <link rel="stylesheet" href="../node_modules/flatpickr/dist/flatpickr.css">
 
 <script src="../node_modules/flatpickr/dist/flatpickr.js"></script>
@@ -121,7 +120,8 @@
         flatpickr(eventDate, {
             enableTime: true,
             dateFormat: "Y-m-d H:i",
-            time_24hr: true
+            time_24hr: true,
+            minDate: new Date().fp_incr(1)
         });
 
         flatpickr(eventDuration, {
@@ -134,7 +134,7 @@
         });
 
         // Froala Editor ===========================================
-        var ecEditor = document.getElementById('myEditor');
+        var ecEditor = document.getElementById('ec-editor');
 
           $(ecEditor).froalaEditor({
               toolbarButtons: ['fullscreen', 'bold', 'italic', 'underline', 'insertLink'],

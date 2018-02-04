@@ -12,7 +12,6 @@ echo "<pre>";
 print_r($event_data);
 echo "</pre>";
 
-echo "===============";
 
 ?>
 
@@ -21,8 +20,8 @@ echo "===============";
     <div class="main eventprofile">
         <div class="eventprofile-leftsection">
             <div class="eventprofile-section">
-                <h2 class="eventprofile-title">Arrangement for Fysioterapeuter</h2>
-                <p class="eventprofile-category">Kategori</p>
+                <h2 class="eventprofile-title"><?php echo $event_data['event_title'] ?></h2>
+                <p class="eventprofile-category"><?php echo $event_data['event_category_type'] ?></p>
             </div>
             <ul class="eventprofile-section eventprofile-list">
                 <li class="eventprofile-address"><i class="fa fa-map-marker" aria-hidden="true"></i>Badung 6700, Esbjerg</li>
@@ -31,15 +30,7 @@ echo "===============";
                 <li class="eventprofile-language"><i class="fa fa-comments-o" aria-hidden="true"></i>Dansk</li>
             </ul>
             <div class="eventprofile-section">
-                <div class="">
-                    <strong> Om arrangementet </strong>
-                    <p> ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation </p>
-                </div>
-                <br>
-                <div class="">
-                    <strong> Meetup  </strong>
-                    <p> ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                </div>
+                    <?php echo html_entity_decode($event_data['event_description']) ?>
             </div>
         </div>
         <div class="eventprofile-rightsection">
@@ -56,8 +47,20 @@ echo "===============";
                 <h1 class="eventprofile-dateday">28</h1>
                 <h3 class="eventprofile-datemonth">September</h3>
             </div>
-            <div class="eventprofile-section">
-                KALENDAR
+            <div class="eventprofile-section eventprofile-calendarsection">
+                <div id="event-kalendar">
+                    <link rel="stylesheet" href="../node_modules/flatpickr/dist/flatpickr.css">
+                    <script src="../node_modules/flatpickr/dist/flatpickr.js"></script>
+                    <script type="text/javascript">
+                        window.onload = function () {
+                            var eventKalendar       = document.getElementById('event-kalendar');
+                            flatpickr(eventKalendar, {
+                                defaultDate: ["<?php echo getDateFull($event_data['event_date']); ?>"],
+                                inline: true
+                            });
+                        }
+                    </script>
+                </div>
             </div>
         </div>
     </div>

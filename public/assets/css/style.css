@@ -95,6 +95,13 @@ a:link, a:visited {
   user-select: none;
   /* Standard syntax */ }
 
+input, input:before, input:after {
+  -webkit-user-select: initial;
+  -khtml-user-select: initial;
+  -moz-user-select: initial;
+  -ms-user-select: initial;
+  user-select: initial; }
+
 button:focus, input[type="button"]:focus {
   outline: none; }
 
@@ -201,7 +208,7 @@ input.checkbox + label:before {
 .style-upload-label {
   padding: 10px;
   margin-right: 25px;
-  background-color: #0da7c1;
+  background-color: #1abc9c;
   border-radius: 3px;
   color: #f2f2f2;
   font-family: 'Lato';
@@ -209,10 +216,14 @@ input.checkbox + label:before {
   cursor: pointer;
   width: 150px;
   display: grid;
-  justify-content: center; }
+  justify-content: center;
+  z-index: 1; }
 
 .style-upload-input {
-  display: none; }
+  position: absolute;
+  z-index: 0;
+  opacity: 0;
+  width: 150px; }
 
 select {
   background: url("https://image.ibb.co/iMeAJv/selectbox_arrow.png") right center no-repeat;
@@ -391,6 +402,10 @@ body {
   max-width: 308px;
   box-sizing: content-box; }
 
+#event-cover-name {
+  font-size: 14px;
+  color: #555555; }
+
 .ec-category-checkboxes {
   display: flex;
   justify-content: space-between;
@@ -465,6 +480,13 @@ body {
   margin: 0px;
   text-transform: uppercase;
   text-align: right; }
+
+.eventprofile-calendarsection {
+  display: flex;
+  justify-content: flex-end; }
+
+.flatpickr-prev-month, .flatpickr-next-month {
+  display: none !important; }
 
 #events-navigation {
   height: 70px;

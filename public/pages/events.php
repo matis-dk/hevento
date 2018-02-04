@@ -26,6 +26,7 @@
                         $event_price            = $i["event_price"];
                         $event_date             = $i["event_date"];
                         $event_id               = $i["event_id"];
+                        $event_cover            = $i["event_cover"];
 
                         include(PUBLIC_PATH . '/pages/event-item.php');
                     }

@@ -28,6 +28,14 @@ a:link, a:visited {
     user-select: none; /* Standard syntax */
 }
 
+input, input:before, input:after {
+     -webkit-user-select: initial;
+     -khtml-user-select: initial;
+     -moz-user-select: initial;
+     -ms-user-select: initial;
+     user-select: initial;
+    }
+
 button:focus, input[type="button"]:focus {
     outline: none;
 }

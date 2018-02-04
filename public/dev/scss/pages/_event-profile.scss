@@ -94,3 +94,13 @@
                 text-transform: uppercase;
                 text-align: right;
             }
+
+        .eventprofile-calendarsection {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+            // Disabling arrows
+            .flatpickr-prev-month, .flatpickr-next-month {
+                display: none !important;
+            }

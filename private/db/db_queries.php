@@ -38,7 +38,7 @@ function createUser ($d) {
 
 function getEventsAll () {
     global $pdo;
-    $stmt = $pdo->prepare("SELECT * FROM table_events");
+    $stmt = $pdo->prepare("SELECT * FROM table_events WHERE event_active=1");
     $stmt->execute();
     $data = $stmt->fetchAll();
     return $data;
@@ -52,6 +52,13 @@ function getEventById($id) {
     $data = $stmt->fetch();
     return $data;
 }
+
+function createEvent ($d) {
+    global $pdo;
+    $stmt = $pdo->prepare('INSERT INTO table_events (event_title, event_address, event_zip, event_town, event_capacity, event_description, event_date, event_duration, event_deadline, event_category_checkboxes, event_category_type, event_price, event_cover, user_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
+    $stmt->execute([$d['event_title'], $d['event_address'], $d['event_zip'], $d['event_town'], $d['event_capacity'], $d['event_description'], $d['event_date'], $d['event_duration'], $d['event_deadline'], $d['event_category_checkboxes'], $d['event_category_type'], $d['event_price'], $d['event_cover'], $d['user_id']]);
+    $stmt->fetch();     // fetchAll(\PDO::FETCH_ASSOC);
+};
 
 
 

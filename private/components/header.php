@@ -1,12 +1,6 @@
-<!-- <?php
-
-print_r($_SESSION);
-
-?> -->
-
 <?php
 
-$urlPath = WWW_ROOT . 'public/pages'
+    $urlPath = WWW_ROOT . 'public/pages'
 
 ?>
 

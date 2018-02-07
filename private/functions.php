@@ -1,5 +1,10 @@
 <?php
 
+    function is_localhost() {
+        $whitelist = array( '127.0.0.1', '::1' );
+        return in_array( $_SERVER['REMOTE_ADDR'], $whitelist);
+    }
+
 // ======================== REDIRECTION ========================
 
     function redirect ($url = null, $msg = null) {
@@ -102,7 +107,7 @@
 
         if (!move_uploaded_file(
             $_FILES[$event_key]['tmp_name'],
-            sprintf(($_SERVER['DOCUMENT_ROOT'] . '/hevento/private/uploads/eventCovers/%s.%s'),
+            sprintf(($_SERVER['DOCUMENT_ROOT'] . '/assets/images/uploads/eventCovers/%s.%s'),
                 $GLOBALS['fileName'],
                 $GLOBALS['fileExtActual']
             )

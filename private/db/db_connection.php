@@ -1,10 +1,17 @@
 <?php
 
 $host = '127.0.0.1';
-$db   = 'hevento';
-$user = 'root';
-$pass = 'root';
 $charset = 'utf8mb4';
+
+if (is_localhost()) {
+    $db   = 'hevento';
+    $user = 'root';
+    $pass = 'root';
+} else {
+    $db   = 'fxubphvtpv';
+    $user = 'fxubphvtpv';
+    $pass = '32ZSTk6wvj';
+}
 
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
 $opt = [

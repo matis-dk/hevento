@@ -4,9 +4,9 @@ $host = '127.0.0.1';
 $charset = 'utf8mb4';
 
 if (checkEnv()) {
-    $db   = 'fxubphvtpv';
-    $user = 'fxubphvtpv';
-    $pass = '32ZSTk6wvj';
+    $db   = 'tvtydkkkde';
+    $user = 'tvtydkkkde';
+    $pass = 'CMUAs5gUAm';
 } else {
     $db   = 'hevento';
     $user = 'root';

@@ -18,7 +18,7 @@
 
 // ======================== DEV or PROD ========================
     if (checkEnv()) {
-        define("WWW_ROOT", 'http://phpstack-127773-427084.cloudwaysapps.com/');
+        define("WWW_ROOT", 'http://phpstack-127773-428204.cloudwaysapps.com/');
     } else {
         define("WWW_ROOT", 'http://hevento/');
     }

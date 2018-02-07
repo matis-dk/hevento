@@ -1,13 +1,5 @@
 <?php
-    echo "<pre>";
-        print_r(array(
-            "PRIVATE_PATH" => PRIVATE_PATH,
-            "PROJECT_PATH" => PROJECT_PATH,
-            "PUBLIC_PATH" => PUBLIC_PATH,
-            "COMPONENTS_PATH" => COMPONENTS_PATH,
-            "WWW_ROOT" => WWW_ROOT
-        ));
-    echo "</pre>";
+    // logPaths();
 ?>
 
 <!DOCTYPE html>

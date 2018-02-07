@@ -41,89 +41,241 @@
                         var mapCanvas = document.getElementById("events-map");
 
                         // Styling
-                        var gmStyle = [
-                              {
-                                  "featureType": "all",
-                                  "elementType": "labels.text",
-                                  "stylers": [
-                                      {
-                                          "visibility": "off"
-                                      }
-                                  ]
-                              },
-                              {
-                                  "featureType": "all",
-                                  "elementType": "labels.icon",
-                                  "stylers": [
-                                      {
-                                          "visibility": "off"
-                                      }
-                                  ]
-                              },
-                              {
-                                  "featureType": "landscape",
-                                  "elementType": "geometry.fill",
-                                  "stylers": [
-                                      {
-                                          "color": "#f1efe8"
-                                      }
-                                  ]
-                              },
-                              {
-                                  "featureType": "landscape.man_made",
-                                  "elementType": "geometry.fill",
-                                  "stylers": [
-                                      {
-                                          "visibility": "on"
-                                      },
-                                      {
-                                          "gamma": "1.19"
-                                      }
-                                  ]
-                              },
-                              {
-                                  "featureType": "landscape.man_made",
-                                  "elementType": "geometry.stroke",
-                                  "stylers": [
-                                      {
-                                          "visibility": "on"
-                                      },
-                                      {
-                                          "gamma": "0.00"
-                                      },
-                                      {
-                                          "weight": "2.07"
-                                      }
-                                  ]
-                              },
-                              {
-                                  "featureType": "road.highway",
-                                  "elementType": "geometry.fill",
-                                  "stylers": [
-                                      {
-                                          "color": "#0e90b2"
-                                      }
-                                  ]
-                              },
-                              {
-                                  "featureType": "road.highway",
-                                  "elementType": "geometry.stroke",
-                                  "stylers": [
-                                      {
-                                          "color": "#0e90b2"
-                                      }
-                                  ]
-                              },
-                              {
-                                  "featureType": "water",
-                                  "elementType": "geometry.fill",
-                                  "stylers": [
-                                      {
-                                          "color": "#33ccff"
-                                      }
-                                  ]
-                              }
-                          ];
+                        var gmStyle = [{
+                                    "featureType": "administrative.country",
+                                    "elementType": "all",
+                                    "stylers": [
+                                        {
+                                            "visibility": "on"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "featureType": "administrative.country",
+                                    "elementType": "geometry.fill",
+                                    "stylers": [
+                                        {
+                                            "visibility": "on"
+                                        },
+                                        {
+                                            "hue": "#ff0000"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "featureType": "administrative.country",
+                                    "elementType": "geometry.stroke",
+                                    "stylers": [
+                                        {
+                                            "visibility": "on"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "featureType": "administrative.country",
+                                    "elementType": "labels",
+                                    "stylers": [
+                                        {
+                                            "visibility": "on"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "featureType": "administrative.country",
+                                    "elementType": "labels.text",
+                                    "stylers": [
+                                        {
+                                            "visibility": "on"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "featureType": "administrative.country",
+                                    "elementType": "labels.text.fill",
+                                    "stylers": [
+                                        {
+                                            "visibility": "on"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "featureType": "administrative.country",
+                                    "elementType": "labels.text.stroke",
+                                    "stylers": [
+                                        {
+                                            "visibility": "on"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "featureType": "administrative.country",
+                                    "elementType": "labels.icon",
+                                    "stylers": [
+                                        {
+                                            "visibility": "on"
+                                        },
+                                        {
+                                            "color": "#c76868"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "featureType": "administrative.locality",
+                                    "elementType": "geometry",
+                                    "stylers": [
+                                        {
+                                            "visibility": "on"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "featureType": "administrative.land_parcel",
+                                    "elementType": "all",
+                                    "stylers": [
+                                        {
+                                            "visibility": "off"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "featureType": "administrative.land_parcel",
+                                    "elementType": "geometry",
+                                    "stylers": [
+                                        {
+                                            "visibility": "on"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "featureType": "landscape.man_made",
+                                    "elementType": "all",
+                                    "stylers": [
+                                        {
+                                            "visibility": "off"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "featureType": "poi",
+                                    "elementType": "labels",
+                                    "stylers": [
+                                        {
+                                            "visibility": "off"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "featureType": "poi.park",
+                                    "elementType": "labels.icon",
+                                    "stylers": [
+                                        {
+                                            "visibility": "on"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "featureType": "road",
+                                    "elementType": "labels",
+                                    "stylers": [
+                                        {
+                                            "visibility": "simplified"
+                                        },
+                                        {
+                                            "lightness": 20
+                                        }
+                                    ]
+                                },
+                                {
+                                    "featureType": "road.highway",
+                                    "elementType": "geometry",
+                                    "stylers": [
+                                        {
+                                            "hue": "#ff8600"
+                                        },
+                                        {
+                                            "visibility": "on"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "featureType": "road.highway",
+                                    "elementType": "labels",
+                                    "stylers": [
+                                        {
+                                            "visibility": "simplified"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "featureType": "road.arterial",
+                                    "elementType": "geometry",
+                                    "stylers": [
+                                        {
+                                            "hue": "#fad959"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "featureType": "road.arterial",
+                                    "elementType": "labels",
+                                    "stylers": [
+                                        {
+                                            "visibility": "off"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "featureType": "road.local",
+                                    "elementType": "geometry",
+                                    "stylers": [
+                                        {
+                                            "visibility": "simplified"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "featureType": "road.local",
+                                    "elementType": "labels",
+                                    "stylers": [
+                                        {
+                                            "visibility": "simplified"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "featureType": "transit",
+                                    "elementType": "all",
+                                    "stylers": [
+                                        {
+                                            "visibility": "off"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "featureType": "water",
+                                    "elementType": "all",
+                                    "stylers": [
+                                        {
+                                            "hue": "#a1cdfc"
+                                        },
+                                        {
+                                            "saturation": 30
+                                        },
+                                        {
+                                            "lightness": 49
+                                        }
+                                    ]
+                                },
+                                {
+                                    "featureType": "water",
+                                    "elementType": "geometry",
+                                    "stylers": [
+                                        {
+                                            "visibility": "on"
+                                        }
+                                    ]
+                                }
+                            ];
 
                         // Settings
                         var gmOptions = {

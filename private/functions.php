@@ -56,6 +56,31 @@
         return $dateTrimmed;
     }
 
+// ======================== DEBUGGING ========================
+
+
+    function logP ($item) {
+        echo "<pre>";
+            print_r($item);
+        echo "</pre>";
+    }
+
+    function logE ($item) {
+        echo $item;
+    }
+
+    function logPaths () {
+        echo "<pre>";
+            print_r(array(
+                "PRIVATE_PATH" => PRIVATE_PATH,
+                "PROJECT_PATH" => PROJECT_PATH,
+                "PUBLIC_PATH" => PUBLIC_PATH,
+                "COMPONENTS_PATH" => COMPONENTS_PATH,
+                "WWW_ROOT" => WWW_ROOT
+            ));
+        echo "</pre>";
+    }
+
 // ======================== FILE UPLOAD ========================
 
 
@@ -85,7 +110,7 @@
 
     function uploadSizeCheck ($event_key) {
         // You should also check filesize here.
-        if ($_FILES[$event_key]['size'] > 1000000) {
+        if ($_FILES[$event_key]['size'] > 2000000) {
             throw new RuntimeException('Exceeded filesize limit.');
         }
     }

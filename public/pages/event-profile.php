@@ -8,10 +8,7 @@ $eventid_sanitized = filter_input(INPUT_GET, 'eventid', FILTER_SANITIZE_STRING);
 
 $event_data = getEventById($eventid_sanitized);
 
-echo "<pre>";
-print_r($event_data);
-echo "</pre>";
-
+// logP($event_data);
 
 ?>
 

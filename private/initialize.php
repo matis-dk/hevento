@@ -3,9 +3,9 @@
 // ======================== FILE SYSTEM VARIABLES ========================
     define("PRIVATE_PATH", dirname(__FILE__));
     define("PROJECT_PATH", dirname(PRIVATE_PATH));
-    define("PUBLIC_PATH", PROJECT_PATH . '\public');
+    define("PUBLIC_PATH", PROJECT_PATH . '/public');
 
-    define("COMPONENTS_PATH", PRIVATE_PATH . '\components');
+    define("COMPONENTS_PATH", PRIVATE_PATH . '/components');
 
 
 
@@ -17,10 +17,10 @@
 
 
 // ======================== DEV or PROD ========================
-    if (is_localhost()) {
-        define("WWW_ROOT", 'http://hevento/');
-    } else {
+    if (checkEnv()) {
         define("WWW_ROOT", 'http://phpstack-127773-427084.cloudwaysapps.com/');
+    } else {
+        define("WWW_ROOT", 'http://hevento/');
     }
 
 

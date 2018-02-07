@@ -1,8 +1,15 @@
 <?php
 
-    function is_localhost() {
-        $whitelist = array( '127.0.0.1', '::1' );
-        return in_array( $_SERVER['REMOTE_ADDR'], $whitelist);
+
+// ======================== ENVIROMENT ========================
+
+    // true = prod,    false = dev
+    function checkEnv() {
+        if (isset($_SERVER["USER"]) == "fxubphvtpv") {
+            return 1;
+        } else {
+            return 0;
+        };
     }
 
 // ======================== REDIRECTION ========================

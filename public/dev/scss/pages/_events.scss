@@ -61,7 +61,7 @@
                 .events-nav-icons:hover {
                     color: $c-g-2;
                     border-bottom: 1px solid $c-g-4;
-                    background-color: $c-t-4;
+                    background-color: $c-t-1;
                 }
 
 
@@ -126,7 +126,7 @@
             -webkit-overflow-scrolling: touch;
         }
             .event-item {
-
+                display: grid;
             }
 
             .event-item:hover {
@@ -137,12 +137,15 @@
                 .event-item-dateday {
                     color: $c-t-4;
                 }
+
+                .event-item-category {
+                    color: $c-t-4;
+                }
             }
 
             .event-item-link {
                 display: grid;
                 grid-template-rows: 1fr auto;
-                height: 100%;
                 color: inherit;
             }
 
@@ -150,6 +153,8 @@
                     background-size: cover;
                     background-position: center;
                     position: relative;
+                    height: 100%;
+                    border: 1px solid $c-g-2;
                 }
 
                 .event-item-img::after {

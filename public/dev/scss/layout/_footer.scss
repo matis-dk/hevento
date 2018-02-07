@@ -6,9 +6,6 @@ footer {
     justify-items: center;
 }
 
-footer .hevento-logo {
-    fill: $c-w-5;
-}
 
 /* FOOTER CONTAINER */
 
@@ -24,6 +21,10 @@ footer .hevento-logo {
     #footer-logo {
         margin-right: 100px;
     }
+
+        .footer-logo-img {
+            fill: $c-w-5;
+        }
 
     .footer-section {
         > h3 {

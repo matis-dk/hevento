@@ -1,6 +1,6 @@
 <li class="event-item">
-    <a href=<?php echo "/hevento/public/pages/event-profile.php?eventid=" . $event_id; ?> class="event-item-link">
-        <figure class="event-item-img" style="background-image: url('<?php echo WWW_ROOT . "private/uploads/eventcovers/" . $event_cover ?>')"></figure>
+    <a href=<?php echo "/pages/event-profile.php?eventid=" . $event_id; ?> class="event-item-link">
+        <figure class="event-item-img" style="background-image: url('<?php echo "../assets/images/uploads/eventCovers/" . $event_cover ?>')"></figure>
         <div class="event-item-content">
             <div class="event-item-text">
                 <p class="event-item-category"><?php echo $event_category_type; ?></p>

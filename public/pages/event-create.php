@@ -6,7 +6,7 @@
 <div class="main-container">
     <div class="main">
         <h2 class="event-h2">Create Event</h2>
-        <form class="event-createform" action="/hevento/public/pages/inc/event-create.inc.php" method="post" enctype="multipart/form-data">
+        <form class="event-createform" action="/pages/inc/event-create.inc.php" method="post" enctype="multipart/form-data">
             <div class="ec-leftbar">
                 <div class="ec-title">
                     <h3>Title</h3>

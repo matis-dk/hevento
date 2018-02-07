@@ -21,7 +21,6 @@
             justify-content: center;
             margin-top: 0px;
         }
-
     }
 
         .signup-form {
@@ -52,12 +51,19 @@
 
     /* Fixed Section  */
 
+
 .signup-section {
     display: flex;
     justify-content: center;
 }
 
+.full-section {
+    height: 350px;
+}
+
     .fixed-section {
+        max-width: 1000px;
+        width: 100%;
 
         > * {
             padding: 15px;

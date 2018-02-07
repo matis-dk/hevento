@@ -8,16 +8,6 @@ header {
     border-bottom: 1px solid rgb(228, 228, 228);
 }
 
-    header .hevento-logo {
-        fill: $c-t-1;
-        transition: 0.3s;
-        cursor: pointer;
-    }
-
-    header .hevento-logo:hover {
-        fill: $c-t-2;
-    }
-
 #header-container {
     display: grid;
     grid-template-columns: auto 1fr;
@@ -30,6 +20,17 @@ header {
         display: flex;
         align-items: center;
     }
+
+        .header-logo-img {
+            fill: $c-t-1;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .header-logo-img:hover {
+            fill: $c-t-2;
+        }
+
 
     #header-navigation {
         display: grid;
@@ -94,12 +95,18 @@ header {
     .hnl-dropdown-container {
         display: flex;
         align-items: center;
-        > figure {
+
+    }
+
+        .icon-header-icon-user {
             display: flex;
             align-items: flex-end;
             margin-right: 10px;
         }
-    }
+
+        .icon-header-icon-user::before {
+            font-size: 20px;
+        }
 
 
     #hnl-dropdown {

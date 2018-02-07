@@ -22,6 +22,8 @@ $data_filter = array(
 // Sanatized input values
 $data_sanitized = filter_input_array(INPUT_POST, $data_filter);
 $data_sanitized['event_category_checkboxes'] = json_encode($data_sanitized['event_category_checkboxes']);
+$data_sanitized['event_active'] = strtotime($data_sanitized['event_date']) > strtotime(date("Y/m/d"));
+
 
 // Handling uploaded file
 try {
@@ -53,14 +55,15 @@ try {
 // Adding user_id
 $data_sanitized['user_id'] = $_SESSION["userSettings"]['user_id'];
 
-echo "<pre>";
-    print_r($data_sanitized);
-echo "</pre>";
+// echo "<pre>";
+//     print_r($data_sanitized);
+// echo "</pre>";
+
 
 // Creating event
 createEvent($data_sanitized);
 
-redirect("public/pages/events.php", "event-created");
+redirect("pages/events.php", "event-created");
 
 
 ?>

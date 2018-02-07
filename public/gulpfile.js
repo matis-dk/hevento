@@ -42,7 +42,7 @@ gulp.task('scripts', function() {
 gulp.task('watch', function() {
 
     browserSync.init({
-        proxy: "http://localhost/Hevento/public/"
+        proxy: "hevento/"
     });
 
     gulp.watch('./dev/js/**/*.js', ['lint', 'scripts']);

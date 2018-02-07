@@ -24,12 +24,12 @@ if (empty($data_sanitized["user_fullname"]) ||
     empty($data_sanitized["user_town"]) ||
     empty($data_sanitized["user_zip"]) ||
     empty($data_sanitized["user_phone"]) ) {
-        redirect("public/pages/signup.php", "signup-failed");
+        redirect("pages/signup.php", "signup-failed");
 }
 
 // Checking if username(email) already exist
 if (getUserEmail($data_sanitized['user_email'])) {
-    redirect("public/pages/signup.php", "following-email-is-already-in-use");
+    redirect("pages/signup.php", "following-email-is-already-in-use");
 }
 
 // Hashing password
@@ -42,7 +42,7 @@ $data_sanitized['user_password'] = $hashed_password;
 createUser($data_sanitized);
 
 // Signup succeeded
-redirect("public/pages/signin.php", "signup-succced");
+redirect("pages/signin.php", "signup-succced");
 
 
 // print_r(password_verify('eeeeeeeeeeeeeeeeeeeeeeeee', $newpassword));

@@ -1,5 +1,5 @@
 <?php
-    // logPaths();
+    logPaths();
 ?>
 
 <!DOCTYPE html>

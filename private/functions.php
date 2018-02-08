@@ -56,6 +56,15 @@
         return $dateTrimmed;
     }
 
+    function getAddresses ($allEvents) {
+        $allAddresses = [];
+        foreach ($allEvents as $i) {
+            $address = $i["event_address"] . " " . $i["event_zip"] . " " . $i["event_town"];
+            array_push($allAddresses, $address);
+        };
+        return $allAddresses;
+    }
+
 // ======================== DEBUGGING ========================
 
 
@@ -147,5 +156,8 @@
             throw new RuntimeException('Failed to move uploaded file.');
         }
     }
+
+
+
 
 ?>

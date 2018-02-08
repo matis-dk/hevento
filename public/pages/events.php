@@ -2,6 +2,13 @@
 <?php include(COMPONENTS_PATH . '/header.php'); ?>
 <!-- ============================================  -->
 
+<?php
+
+    $allEvents = getEventsAll();
+    $allAddresses = getAddresses($allEvents);
+
+    logP($allAddresses);
+ ?>
 
 <div>
     <div>
@@ -20,7 +27,7 @@
                 <ul id="events-list-ul">
                     <?php
 
-                    foreach (getEventsAll() as $i) {
+                    foreach ($allEvents as $i) {
                         $event_category_type    = $i["event_category_type"];
                         $event_title            = $i["event_title"];
                         $event_price            = $i["event_price"];
@@ -28,7 +35,7 @@
                         $event_id               = $i["event_id"];
                         $event_cover            = $i["event_cover"] ? $i["event_cover"] : "default.png";
 
-                        include(PUBLIC_PATH . '/pages/event-item.php');
+                        include(PRIVATE_PATH . '/components/event-item.php');
                     }
 
                     ?>
@@ -36,7 +43,13 @@
             </div>
             <div id="events-map">
                 <script>
-                    function initMap(markers = []) {
+                fetch('http://hevento/pages/data/event-addresses.php')
+                    .then(response => response.json())
+                    .then(json => console.dir(json))
+
+
+
+                    function initMap() {
 
                         var mapCanvas = document.getElementById("events-map");
 
@@ -287,11 +300,13 @@
                         };
 
                         var bounds = new google.maps.LatLngBounds();
-                        map = new google.maps.Map(mapCanvas, gmOptions);
-
+                        var map = new google.maps.Map(mapCanvas, gmOptions);
 
                         // Display multiple markers on a map
-                        var infoWindow = new google.maps.InfoWindow(), marker, i;
+                        var infoWindow = new google.maps.InfoWindow(), i;
+
+                        // Google maps markers coordinates from address
+
 
                         // Tooltip content
                         function infoContent (member) {
@@ -323,7 +338,7 @@
                                         map: map,
                                         title: markers[i][0],
                                         icon: {
-                                            url: "http://danskehestefysioterapeuter.localhost/wp-content/uploads/2018/01/googlemapspin3.png",
+                                            url: "http://www.pvhc.net/img44/adavohjvtkmaaewhudrj.png",
                                             scaledSize: new google.maps.Size(25, 38.75)
                                         }
                                     });
@@ -338,6 +353,29 @@
 
                             }
 
+                        // Getting geo coordinates from an address
+                        function getLocation (memberInfo) {
+                            if (memberInfo.length == 0) return;
+
+                            Promise.all(memberInfo.map((i) => getGeo(i[0], i[1])) )
+                                .then((value) => {
+                                    initMap(value)
+                                })
+                        }
+
+                        function getGeo (member, address) {
+                            return new Promise (function (resolve, reject) {
+
+                                var geocoder = new google.maps.Geocoder();
+                                geocoder.geocode({"address": address }, geoCallback);
+
+                                function geoCallback (results) {
+                                    var position = [member, results[0].geometry.location.lat(), results[0].geometry.location.lng()];
+                                    resolve(position);
+                                }
+                            })
+
+                        }
 
 
                         var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {

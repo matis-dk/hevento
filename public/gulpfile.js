@@ -8,7 +8,7 @@ var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 var browserSync = require('browser-sync').create();
-
+var babel = require('gulp-babel');
 
 
 // Lint Task
@@ -33,7 +33,12 @@ gulp.task('scripts', function() {
         .pipe(concat('main.js'))
         .pipe(gulp.dest('./assets/js'))
         .pipe(rename('main.min.js'))
-        .pipe(uglify())
+        .pipe(babel({
+            presets: ['env']
+        }))
+        .pipe(uglify().on('error', function(e){
+                    console.log(e);
+                 }))
         .pipe(gulp.dest('./assets/js'))
         .pipe(browserSync.reload({stream: true}))
 });

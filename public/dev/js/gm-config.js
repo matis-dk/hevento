@@ -344,5 +344,3 @@ var gmOptions = {
     disableDefaultUI: true,
     styles: gmStyle
 };
-
-var baseURL = 'http://localhost:3000';

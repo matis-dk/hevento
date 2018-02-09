@@ -134,8 +134,6 @@ input:-webkit-autofill {
 
 .style-button {
   background-color: #9689CC;
-  background-size: 400% 400%;
-  animation: Gradient 15s ease infinite;
   border: 0;
   color: #dcdcdc;
   font-weight: 700;
@@ -248,6 +246,37 @@ select:disabled::-ms-expand {
   background: #f60; }
 
 /* ==================== MEDIA ==================== */
+.popup-msg {
+  position: fixed;
+  width: 100%;
+  height: 85px;
+  background-color: #9689CC;
+  z-index: 2;
+  bottom: 0px;
+  animation-name: slidein;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  display: none;
+  justify-content: center;
+  align-items: center; }
+  .popup-msg > p {
+    padding: 10px 25px;
+    border: 1px solid #eef1f5;
+    border-radius: 3px;
+    color: #eef1f5;
+    text-transform: capitalize;
+    cursor: pointer;
+    transition: 0.3s; }
+  .popup-msg > p:hover {
+    background-color: #2e3f53;
+    border-color: #2e3f53; }
+
+@keyframes slidein {
+  0% {
+    transform: translateY(100px); }
+  100% {
+    transform: translateY(0px); } }
+
 * {
   padding: 0px;
   margin: 0px; }
@@ -375,28 +404,29 @@ select:disabled::-ms-expand {
   .ec-leftbar > *, .ec-rightbar > * {
     margin-bottom: 30px; }
 
+.ec-address {
+  width: 100%; }
+
 .ec-address-forms {
   display: grid;
   grid-template-columns: 1fr 1.5fr;
   grid-template-rows: 1fr;
   grid-template-areas: "address address" "zip town";
-  grid-column-gap: 15px; }
-  .ec-address-forms > * {
-    width: 100%; }
-
-#event-address {
-  grid-area: address; }
-
-#event-zip {
-  grid-area: zip; }
-
-#event-town {
-  grid-area: town; }
+  grid-column-gap: 15px;
+  width: 100%; }
+  .ec-address-forms > div:nth-child(1) {
+    grid-area: address; }
+  .ec-address-forms > div:nth-child(2) {
+    grid-area: zip; }
+  .ec-address-forms > div:nth-child(3) {
+    grid-area: town; }
 
 .ec-address-maps {
   height: 200px;
-  background-color: rgba(46, 63, 83, 0.07);
   margin-top: 20px; }
+  .ec-address-maps > #events-map {
+    height: 100%;
+    width: 100%; }
 
 .ec-description {
   height: 400px; }

@@ -2,6 +2,9 @@
 
 
 // ======================== ENVIROMENT ========================
+    // print and logging
+    $debug = false;
+
 
     // true = prod,    false = dev
     function checkEnv() {
@@ -66,19 +69,26 @@
     }
 
 // ======================== DEBUGGING ========================
-
-
     function logP ($item) {
+        global $debug;
+        if( !$debug ) {  return; };
+
         echo "<pre>";
             print_r($item);
         echo "</pre>";
     }
 
     function logE ($item) {
+        global $debug;
+        if( !$debug ) {  return; };
+
         echo $item;
     }
 
     function logPaths () {
+        global $debug;
+        if( !$debug ) {  return; };
+
         echo "<pre>";
             print_r(array(
                 "PRIVATE_PATH" => PRIVATE_PATH,

@@ -2,7 +2,6 @@
 <?php include(COMPONENTS_PATH . '/header.php'); ?>
 <!-- ============================================  -->
 
-
 <div class="main-container">
     <div class="main">
         <h2 class="event-h2">Create Event</h2>
@@ -14,10 +13,10 @@
                 </div>
                 <div class="ec-address">
                     <h3>Address</h3>
-                    <div class="ec-address-forms">
-                        <input class="style-input" required spellcheck="false" value="" id="event-address"  type="text" name="event_address" placeholder="Address">
-                        <input class="style-input" required spellcheck="false" value="" id="event-zip"  type="text" name="event_zip" placeholder="Zip">
-                        <input class="style-input" required spellcheck="false" value="" id="event-town"  type="text" name="event_town" placeholder="Town">
+                    <div class="ec-address-forms" id="event-address-container">
+                        <div><input class="style-input" required spellcheck="false" value="" id="event-address"  type="text" name="event_address" placeholder="Address"></div>
+                        <div><input class="style-input" required spellcheck="false" value="" id="event-zip"  type="text" name="event_zip" placeholder="Zip"></div>
+                        <div><input class="style-input" required spellcheck="false" value="" id="event-town"  type="text" name="event_town" placeholder="Town"></div>
                     </div>
                     <h3>Capacity</h3>
                     <div class="ec-address-capacity">
@@ -29,7 +28,9 @@
                         </select>
                     </div>
                     <div class="ec-address-maps">
-                        <div id="events-map-tiny"></div>
+                        <div id="events-map">
+                            <script async defer	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCf3mRQokKB3FL9iowFp7ERIY8apfl61jM&callback=initMap"></script>
+                        </div>
                     </div>
                 </div>
                 <div class="ec-description">
@@ -112,6 +113,23 @@
 <script type="text/javascript">
 
     window.onload = function () {
+
+        // Google maps ===========================================
+
+        var eventAddress    = document.getElementById('event-address');
+        var eventZip        = document.getElementById('event-zip');
+        var eventTown       = document.getElementById('event-town');
+
+        var addressCon = document.getElementById('event-address-container')
+        addressCon.addEventListener('change', function () {
+
+            if (eventAddress.value && eventZip.value && eventTown.value) {
+                var address = [`${eventAddress.value} ${eventZip.value} ${eventTown.value}`]
+                console.log(address);
+                initMap(address, false);
+            }
+        })
+
 
         // Date =====================================================
         var eventDate       = document.getElementById('event-date');
